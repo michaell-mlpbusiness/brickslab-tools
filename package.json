@@ -4,7 +4,8 @@
   "packageManager": "pnpm@10.30.0",
   "scripts": {
     "dev": "pnpm sync:components && pnpm --filter brickslab_catalog dev",
-    "build": "pnpm sync:components && pnpm --filter brickslab_catalog build",
+    "build": "pnpm run build:packages && pnpm sync:components && pnpm --filter brickslab_catalog build",
+    "build:packages": "pnpm --filter @brickslab./token-contract build && pnpm --filter @brickslab./theme-default build && pnpm --filter @brickslab./ui-web build",
     "start": "pnpm --filter brickslab_catalog start",
     "lint": "pnpm --filter brickslab_catalog lint",
     "sync:components": "node scripts/sync-components.js"

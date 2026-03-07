@@ -4,6 +4,7 @@ node_modules
 dist/
 .next/
 out/
+dist-repo-variants/
 
 # Logs
 logs/
