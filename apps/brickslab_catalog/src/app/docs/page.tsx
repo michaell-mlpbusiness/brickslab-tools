@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { CodeBlock } from "../../catalog/CodeBlock";
 import {
-  FiBookOpen,
   FiBox,
   FiSliders,
   FiGitBranch,
@@ -279,6 +278,12 @@ function Step({
 
 const NAV_CARDS = [
   {
+    href: "#tools-workflow",
+    icon: <FiBox size={18} />,
+    title: "Fonctionnement des outils",
+    description: "Workflow Theme Builder + Mockup Builder jusqu'à l'intégration.",
+  },
+  {
     href: "#tokens",
     icon: <FiSliders size={18} />,
     title: "Design Tokens",
@@ -364,14 +369,17 @@ export default function DocsPage() {
             lineHeight: 1.7,
           }}
         >
-          Référence technique de <InlineCode>@brickslab./ui-web</InlineCode> — tokens CSS, theming,
-          architecture du monorepo et guide de contribution.
+          Guide central de <InlineCode>Brickslab.Tools</InlineCode> : fonctionnement des outils, tokens CSS,
+          architecture monorepo et conventions d'intégration.
         </p>
 
         {/* Quick links bar */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <Link href="/getting-started" style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 13, fontWeight: 600, color: "var(--color-brand)", textDecoration: "none", padding: "5px 12px", border: "1px solid var(--c-brand-border)", borderRadius: "var(--radius-full)", background: "var(--c-brand-subtle)" }}>
-            <FiBookOpen size={13} /> Getting Started
+          <Link href="/components/themebuilder" style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 13, fontWeight: 600, color: "var(--color-brand)", textDecoration: "none", padding: "5px 12px", border: "1px solid var(--c-brand-border)", borderRadius: "var(--radius-full)", background: "var(--c-brand-subtle)" }}>
+            <FiSliders size={13} /> Theme Builder
+          </Link>
+          <Link href="/components/mockupbuilder" style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 13, fontWeight: 600, color: "var(--color-muted)", textDecoration: "none", padding: "5px 12px", border: "1px solid var(--c-border)", borderRadius: "var(--radius-full)", background: "var(--c-surface-elevated)" }}>
+            <FiBox size={13} /> Mockup Builder
           </Link>
           <Link href="/catalog" style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 13, fontWeight: 600, color: "var(--color-muted)", textDecoration: "none", padding: "5px 12px", border: "1px solid var(--c-border)", borderRadius: "var(--radius-full)", background: "var(--c-surface-elevated)" }}>
             <FiBox size={13} /> Catalogue
@@ -415,6 +423,104 @@ export default function DocsPage() {
             </div>
           </a>
         ))}
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION 1 — FONCTIONNEMENT DES OUTILS
+      ═══════════════════════════════════════════════════════════ */}
+      <SectionAnchor id="tools-workflow" title="Fonctionnement des outils Brickslab" icon={<FiBox size={15} />} />
+
+      <p style={{ margin: "0 0 20px", fontSize: 14, color: "var(--color-muted)", lineHeight: 1.7 }}>
+        Brickslab.Tools repose sur deux outils complémentaires :{" "}
+        <strong>Theme Builder</strong> pour construire votre système de tokens et{" "}
+        <strong>Mockup Builder</strong> pour composer des écrans avec les composants du catalogue.
+      </p>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
+        <div style={{ padding: "16px", border: "1px solid var(--c-border)", borderRadius: "var(--radius-md)", background: "var(--c-surface)" }}>
+          <p style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: "var(--color-fg)" }}>1. Theme Builder</p>
+          <p style={{ margin: 0, fontSize: 12, color: "var(--color-muted)", lineHeight: 1.6 }}>
+            Ajustez palette, typo, spacing, radius, ombres et générez un fichier CSS de tokens prêt à importer.
+          </p>
+        </div>
+        <div style={{ padding: "16px", border: "1px solid var(--c-border)", borderRadius: "var(--radius-md)", background: "var(--c-surface)" }}>
+          <p style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: "var(--color-fg)" }}>2. Mockup Builder</p>
+          <p style={{ margin: 0, fontSize: 12, color: "var(--color-muted)", lineHeight: 1.6 }}>
+            Assemblez les blocs visuellement, modifiez les props des composants et testez la composition par viewport.
+          </p>
+        </div>
+      </div>
+
+      <CodeBlock language="text" title="Flux recommandé">
+{`1) Définir le thème dans /components/themebuilder
+2) Exporter les tokens CSS
+3) Composer les écrans dans /components/mockupbuilder
+4) Intégrer les composants @brickslab./ui-web dans votre app Next/React`}
+      </CodeBlock>
+
+      <TokenTable title="Entrées / sorties des outils" headers={["Outil", "Entrées", "Sorties"]}>
+        <TokenRow
+          name="Theme Builder"
+          value="Polices, palette, couleurs sémantiques, surfaces, typo, spacing, radius, ombres, transitions, focus, z-index"
+          description="`tokens.css` généré + aperçu live des tokens"
+        />
+        <TokenRow
+          name="Mockup Builder"
+          value="Composants glissés depuis la palette, layouts presets, édition props + layout (x/y/w/h/z-index)"
+          description="Code TSX exporté + brouillon autosauvegardé (localStorage)"
+        />
+      </TokenTable>
+
+      <div style={{ marginTop: 12 }}>
+        <p style={{ margin: "0 0 8px", fontSize: 14, fontWeight: 600, color: "var(--color-fg)" }}>
+          Theme Builder — ce qui se passe concrètement
+        </p>
+        <ul style={{ margin: "0 0 16px 20px", color: "var(--color-muted)", fontSize: 13, lineHeight: 1.7 }}>
+          <li>Navigation par familles de tokens (polices, palette, couleurs, surfaces, typo, spacing, radius, etc.).</li>
+          <li>Le bouton <InlineCode>Appliquer aux tokens sémantiques</InlineCode> propage la palette vers les tokens métier.</li>
+          <li>La colonne droite affiche un aperçu live + le CSS final généré en temps réel.</li>
+          <li><InlineCode>Télécharger tokens.css</InlineCode> exporte le fichier prêt à importer au-dessus de <InlineCode>@brickslab./theme-default</InlineCode>.</li>
+          <li><InlineCode>Reset</InlineCode> revient à la configuration par défaut.</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: 4 }}>
+        <p style={{ margin: "0 0 8px", fontSize: 14, fontWeight: 600, color: "var(--color-fg)" }}>
+          Mockup Builder — ce qui se passe concrètement
+        </p>
+        <ul style={{ margin: "0 0 16px 20px", color: "var(--color-muted)", fontSize: 13, lineHeight: 1.7 }}>
+          <li>Palette gauche: onglets <InlineCode>Composants</InlineCode> et <InlineCode>Layouts</InlineCode>, recherche et drag-and-drop vers le canvas.</li>
+          <li>Canvas central: contrôle viewport, hauteur, zoom, grille, guides d’alignement, fond personnalisé.</li>
+          <li>Panneau droite: édition des props de composant et du layout (x, y, w, h, z-index) du bloc sélectionné.</li>
+          <li>Historique: annuler/rétablir, duplication, copier/coller, suppression, reflow automatique des blocs.</li>
+          <li>Persistance: autosave local et action <InlineCode>Restaurer</InlineCode> pour récupérer un brouillon.</li>
+          <li>Export: <InlineCode>Exporter le code</InlineCode> ouvre un TSX prêt à intégrer, avec imports depuis <InlineCode>@brickslab./ui-web</InlineCode>.</li>
+        </ul>
+      </div>
+
+      <CodeBlock language="tsx" title="Cycle complet recommandé (production)">
+{`// 1) Générer tokens.css dans Theme Builder puis l'importer globalement
+@import "@brickslab./theme-default/dist/tokens.css";
+@import "./tokens.css";
+
+// 2) Assembler un écran dans Mockup Builder, puis exporter le TSX
+import { Button, SectionHeader } from "@brickslab./ui-web";
+
+export default function MyPage() {
+  return (
+    <div style={{ position: "relative" }}>
+      <SectionHeader title="Mon écran" />
+      <Button variant="primary">Action</Button>
+    </div>
+  );
+}`}
+      </CodeBlock>
+
+      <div style={{ marginTop: 16 }}>
+        <InfoBox>
+          Les deux outils partagent le même socle de composants et de tokens, ce qui limite les écarts entre
+          prototype et implémentation production.
+        </InfoBox>
       </div>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -699,7 +805,7 @@ function toggleDarkMode(enabled: boolean) {
       <SectionAnchor id="architecture" title="Architecture" icon={<FiGitBranch size={15} />} />
 
       <p style={{ margin: "0 0 20px", fontSize: 14, color: "var(--color-muted)", lineHeight: 1.7 }}>
-        Brickslab est un <strong>monorepo pnpm</strong> avec 4 packages et 1 application.
+        Brickslab.Tools est un <strong>monorepo pnpm</strong> avec 4 packages et 1 application catalogue.
       </p>
 
       <TokenTable title="Packages & Applications" headers={["Package", "Description"]}>
@@ -707,7 +813,7 @@ function toggleDarkMode(enabled: boolean) {
           ["packages/ui-web (@brickslab./ui-web)", "Librairie React — source des composants. Publiée sur npm (public)."],
           ["packages/token-contract (@brickslab./token-contract)", "Déclarations CSS des tokens (contrat, sans valeurs)."],
           ["packages/theme-default (@brickslab./theme-default)", "Thème par défaut — implémente token-contract avec des valeurs concrètes."],
-          ["apps/brickslab_catalog", "Site de documentation Next.js 16 (App Router)."],
+          ["apps/brickslab_catalog", "Application Next.js 16 qui regroupe catalogue + Theme Builder + Mockup Builder."],
         ].map(([name, desc]) => (
           <TokenRow key={name} name={name} value={desc} />
         ))}
@@ -767,20 +873,18 @@ function toggleDarkMode(enabled: boolean) {
 
       <CodeBlock language="bash">
 {`# Développement
-pnpm dev                    # sync + démarrer le catalogue en watch
+pnpm dev                    # sync + démarrer le catalogue
 
 # Build
-pnpm build                  # audit → sync → build tous les packages
-pnpm build:catalog          # build catalogue uniquement
+pnpm run build:packages     # build des packages workspace
+pnpm build                  # build packages + sync + next build
 
 # Qualité
-pnpm run audit              # audit 7 axes → logs/audit-results.json
-pnpm audit:verbose          # idem + affiche les tests échoués
-pnpm typecheck              # typecheck tous les packages
-pnpm lint                   # lint tous les packages
+pnpm lint                   # lint du catalogue
 
 # Utilitaires
-pnpm sync:components        # components.csv → components.data.ts`}
+pnpm sync:components        # components.csv → components.data.ts
+pnpm start                  # lancer en mode production`}
       </CodeBlock>
 
       {/* ═══════════════════════════════════════════════════════════

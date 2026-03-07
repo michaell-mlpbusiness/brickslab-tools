@@ -203,7 +203,7 @@ const SAMPLE_NAV_SECTIONS = [
 ];
 
 const SAMPLE_MENU_TREE = [
-  { label: "Guide", children: [{ label: "Installation", href: "/getting-started" }, { label: "Usage", href: "/docs" }] },
+  { label: "Guide", children: [{ label: "Documentation", href: "/docs" }, { label: "Usage", href: "/docs" }] },
   { label: "Composants", children: [{ label: "Button", href: "/components/button" }, { label: "Input", href: "/components/input" }] },
 ];
 
@@ -420,7 +420,7 @@ function getAutoPreviewProps(name: string): Record<string, unknown> {
     case "CopyButton":
       return { onCopy: NOOP, label: "Copier" };
     case "LinkList":
-      return { title: "Raccourcis", links: [{ label: "Installation", href: "/getting-started" }, { label: "Catalogue", href: "/catalog" }] };
+      return { title: "Raccourcis", links: [{ label: "Documentation", href: "/docs" }, { label: "Catalogue", href: "/catalog" }] };
     case "SectionGallery":
       return { title: "Galerie", columns: 2, items: [<Badge key="1">Badge</Badge>, <Button key="2">Button</Button>, <TagChip key="3" label="Tag" />, <Spinner key="4" />] };
     case "SectionExampleCard":

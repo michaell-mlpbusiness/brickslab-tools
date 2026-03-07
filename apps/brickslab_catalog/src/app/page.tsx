@@ -6,9 +6,6 @@ import {
   WordRotate,
   NumberTicker,
   AnimatedGradientText,
-  SparklesText,
-  GlowPulseText,
-  ProgressBar,
   Button,
   Badge,
   TagChip,
@@ -29,7 +26,6 @@ import {
   FiPackage,
   FiCode,
   FiAward,
-  FiMail,
   FiArrowRight,
 } from "react-icons/fi";
 
@@ -220,33 +216,33 @@ function OverviewSection({
 const features = [
   {
     icon: <FiLayers size={20} />,
-    title: "Design tokens CSS",
-    description: "Variables cohérentes sur tout le projet. Personnalisables via le Theme Builder.",
+    title: "Theme Builder intégré",
+    description: "Ajustez couleurs, typo, espacement et exportez des tokens prêts à brancher dans votre app.",
   },
   {
     icon: <FiZap size={20} />,
-    title: "Zero config",
-    description: "Un import suffit. Aucune config webpack, aucun provider global requis.",
+    title: "Mockup Builder visuel",
+    description: "Assemblez des écrans par blocs, modifiez les props en direct et prototypez rapidement.",
   },
   {
     icon: <FiShield size={20} />,
-    title: "Audit qualité 8 axes",
-    description: "Chaque composant est testé : API, rendu, a11y, tokens, responsive, sécurité, docs, performance FPS/CPU.",
+    title: "Workflow cohérent",
+    description: "Un même socle de composants entre les outils, le catalogue et l’implémentation produit.",
   },
   {
     icon: <FiPackage size={20} />,
-    title: "Tree-shakeable",
-    description: "Importez seulement ce que vous utilisez. Bundle minimal en production.",
+    title: "Export orienté prod",
+    description: "Récupérez CSS tokens et snippets de code pour passer du prototype à la prod sans friction.",
   },
   {
     icon: <FiCode size={20} />,
-    title: "TypeScript natif",
-    description: "Types stricts, autocomplétion complète, aucune déclaration manuelle.",
+    title: "Composants prêts à l’emploi",
+    description: "Catalogue web/mobile documenté avec démonstrations réelles pour accélérer l’intégration.",
   },
   {
     icon: <FiAward size={20} />,
-    title: "React 19 ready",
-    description: "Compatible React 19, Server Components et Next.js App Router.",
+    title: "Stack moderne",
+    description: "Compatible React 19 + Next.js 16 avec un monorepo pensé pour itérer vite.",
   },
 ];
 
@@ -354,7 +350,7 @@ function ComponentShowcase() {
       />
 
       {/* Section header */}
-      <div style={{ marginBottom: 40 }}>
+        <div style={{ marginBottom: 40 }}>
         <div
           style={{
             display: "inline-flex",
@@ -369,8 +365,8 @@ function ComponentShowcase() {
             borderRadius: 20,
             marginBottom: 14,
           }}
-        >
-          Composants en action
+          >
+          Outils + composants
         </div>
         <h2
           style={{
@@ -386,12 +382,12 @@ function ComponentShowcase() {
             speed={6}
             style={{ fontWeight: 800 }}
           >
-            Vrais composants,
+            Les briques des outils,
           </AnimatedGradientText>{" "}
-          <span style={{ color: "var(--color-fg)" }}>prêts à intégrer.</span>
+          <span style={{ color: "var(--color-fg)" }}>prêtes pour vos écrans.</span>
         </h2>
         <p style={{ fontSize: 15, color: "var(--color-muted)", margin: 0, maxWidth: 480, lineHeight: 1.6 }}>
-          Chaque brique est testée, accessible et respecte les mêmes tokens CSS que votre projet.
+          Theme Builder et Mockup Builder s’appuient sur le même socle de composants que le catalogue.
         </p>
       </div>
 
@@ -531,21 +527,21 @@ function ComponentShowcase() {
 const HOW_IT_WORKS = [
   {
     n: "01",
-    title: "Brief",
-    description: "Décrivez votre projet, vos objectifs et votre audience. On échange pour cerner l'ambition et établir un devis.",
-    comment: "Réponse sous 48h",
+    title: "Configurez votre thème",
+    description: "Dans Theme Builder, personnalisez couleurs, typographies, rayons, ombres et variables globales.",
+    comment: "Export CSS tokens prêt à importer",
   },
   {
     n: "02",
-    title: "Design & intégration",
-    description: "Nos composants sont assemblés, adaptés à votre identité visuelle et intégrés pour former votre interface sur mesure.",
-    comment: "Basé sur notre catalogue de composants",
+    title: "Composez vos écrans",
+    description: "Dans Mockup Builder, assemblez les composants, ajustez leurs props et testez la mise en page responsive.",
+    comment: "Preview visuelle immédiate",
   },
   {
     n: "03",
-    title: "Livraison",
-    description: "Votre site, prêt à déployer. Code propre, performant, accessible et documenté.",
-    comment: "Support inclus après livraison",
+    title: "Passez en implémentation",
+    description: "Réutilisez les mêmes composants dans votre app React/Next et branchez les tokens générés.",
+    comment: "Du prototype à la prod",
   },
 ];
 
@@ -611,10 +607,10 @@ function HowItWorks() {
             color: "var(--color-fg)",
           }}
         >
-          Votre site web en 3 étapes.
+          Créez votre UI en 3 étapes.
         </h2>
         <p style={{ fontSize: 15, color: "var(--color-muted)", margin: "0 0 40px 0", maxWidth: 480, lineHeight: 1.6 }}>
-          On conçoit et intègre votre interface à partir de nos composants, adaptés à votre projet et votre identité.
+          Brickslab.Tools relie design tokens, prototypage et composants de production dans un flux unique.
         </p>
 
         <div
@@ -748,7 +744,7 @@ function BottomCTA() {
             marginBottom: 20,
           }}
         >
-          Sur mesure · Livraison rapide
+          Prêt à builder
         </div>
 
         <h2
@@ -765,10 +761,10 @@ function BottomCTA() {
             speed={5}
             style={{ fontWeight: 900 }}
           >
-            Votre prochain site web,
+            Vos outils UI,
           </AnimatedGradientText>
           <br />
-          <span style={{ color: "var(--color-fg)" }}>assemblé avec soin.</span>
+          <span style={{ color: "var(--color-fg)" }}>prêts pour la production.</span>
         </h2>
 
         <p
@@ -780,35 +776,17 @@ function BottomCTA() {
             lineHeight: 1.7,
           }}
         >
-          Nos {componentsData.filter((c) => c.type === "web").length} composants web et {componentsData.filter((c) => c.type === "mobile").length} composants mobile
-          documentés sont la base de votre prochain projet produit. Contactez-nous pour en discuter.
+          Lancez Theme Builder pour définir votre système visuel, puis Mockup Builder pour assembler vos pages
+          avec nos composants web/mobile documentés.
         </p>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
-          <Link href="/catalog" className="home-cta-primary">
-            Voir le catalogue
+          <Link href="/components/themebuilder" className="home-cta-primary">
+            Lancer Theme Builder
           </Link>
-          <a
-            href="mailto:contact@brickslab.io"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              padding: "11px 20px",
-              background: "transparent",
-              color: "var(--color-fg)",
-              border: "1px solid var(--c-border)",
-              borderRadius: "var(--radius-md)",
-              fontWeight: 600,
-              textDecoration: "none",
-              fontSize: 15,
-              transition: "color 0.15s, border-color 0.15s, background 0.15s",
-            }}
-            className="home-cta-contact"
-          >
-            <FiMail size={16} />
-            Nous contacter
-          </a>
+          <Link href="/components/mockupbuilder" className="home-cta-secondary">
+            Ouvrir Mockup Builder
+          </Link>
         </div>
 
         {/* Stats row */}
@@ -821,10 +799,10 @@ function BottomCTA() {
           }}
         >
           {[
+            { value: "2", label: "outils interactifs" },
             { value: componentsData.filter((c) => c.type === "web").length, label: "composants web" },
             { value: componentsData.filter((c) => c.type === "mobile").length, label: "composants mobile" },
-            { value: "8", label: "axes d'audit" },
-            { value: "Sur mesure", label: "chaque projet" },
+            { value: "1 flux", label: "de l'idée à la prod" },
           ].map(({ value, label }) => (
             <div key={label} style={{ textAlign: "center" }}>
               <div
@@ -974,7 +952,7 @@ export default function Home() {
               lineHeight: 1,
             }}
           >
-            Brickslab.
+            Brickslab.Tools
           </AuroraText>
 
           <div
@@ -991,7 +969,7 @@ export default function Home() {
           >
             <span>Build UIs with</span>
             <WordRotate
-              words={["consistency.", "confidence.", "velocity.", "design tokens."]}
+              words={["theme tokens.", "smart mockups.", "production components.", "consistency."]}
               style={{ color: "var(--color-brand)", fontWeight: 700, minWidth: 200, textAlign: "left" }}
               transition="slide"
               interval={2800}
@@ -1007,7 +985,8 @@ export default function Home() {
               lineHeight: 1.65,
             }}
           >
-            <NumberTicker value={componentsData.length} suffix=" composants" duration={1.2} /> web + mobile documentés et testés, prêts à assembler.
+            <NumberTicker value={2} suffix=" outils" duration={1.2} /> pour configurer vos thèmes et composer vos écrans,
+            appuyés sur <NumberTicker value={componentsData.length} suffix=" composants" duration={1.2} /> documentés.
           </p>
 
           <div
@@ -1019,11 +998,11 @@ export default function Home() {
               flexWrap: "wrap",
             }}
           >
-            <Link href="/catalog" className="home-cta-primary">
-              Parcourir le catalogue
+            <Link href="/components/themebuilder" className="home-cta-primary">
+              Lancer Theme Builder
             </Link>
-            <Link href="/tests" className="home-cta-secondary">
-              Voir les tests
+            <Link href="/components/mockupbuilder" className="home-cta-secondary">
+              Ouvrir Mockup Builder
             </Link>
           </div>
 
@@ -1037,7 +1016,7 @@ export default function Home() {
               flexWrap: "wrap",
             }}
           >
-            {["React 19", "TypeScript", "CSS Tokens", "Next.js 16", "Tree-shakeable", "a11y tested"].map(
+            {["Theme Builder", "Mockup Builder", "React 19", "TypeScript", "CSS Tokens", "Next.js 16"].map(
               (tag) => (
                 <span
                   key={tag}

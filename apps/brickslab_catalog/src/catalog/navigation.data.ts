@@ -14,7 +14,6 @@ export const navSections: NavSection[] = [
     section: "Navigation",
     items: [
       { label: "Accueil", href: "/" },
-      { label: "Getting Started", href: "/getting-started" },
       { label: "Documentation", href: "/docs" },
       { label: "Catalogue", href: "/catalog" },
       { label: "Mobile UI", href: "/mobile" },

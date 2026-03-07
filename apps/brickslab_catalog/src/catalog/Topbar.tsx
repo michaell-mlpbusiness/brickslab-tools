@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navSections } from "./navigation.data";
@@ -9,7 +10,13 @@ import { KineticUnderlineText } from "@brickslab./ui-web";
 import uiWebPackage from "@brickslab./ui-web/package.json";
 
 const topNavItems =
-  navSections.find((s) => s.section === "Navigation")?.items ?? [];
+  (navSections.find((s) => s.section === "Navigation")?.items ?? []).filter(
+    (item) => item.href !== "/mobile"
+  );
+const toolsNavItems = [
+  { label: "Theme Builder", href: "/components/themebuilder" },
+  { label: "Mockup Builder", href: "/components/mockupbuilder" },
+];
 const uiWebVersion = `v${uiWebPackage.version}`;
 
 interface TopbarProps {
@@ -19,12 +26,72 @@ interface TopbarProps {
 
 export function Topbar({ sidebarOpen, onToggle }: TopbarProps) {
   const pathname = usePathname();
+  const [toolsOpen, setToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+  const isToolsActive = toolsNavItems.some(({ href }) => pathname === href);
+
+  useEffect(() => {
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (toolsRef.current?.contains(target)) return;
+      setToolsOpen(false);
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setToolsOpen(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
 
   return (
     <>
       <style>{`
         .topbar-nav { display: flex; align-items: center; gap: 2px; }
         @media (max-width: 768px) { .topbar-nav { display: none; } }
+        .topbar-tools { position: relative; }
+        .topbar-tools-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .topbar-tools-menu {
+          position: absolute;
+          top: calc(100% + 8px);
+          left: 0;
+          min-width: 190px;
+          border: 1px solid var(--c-border);
+          border-radius: 10px;
+          background: var(--c-surface);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+          padding: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          z-index: 130;
+        }
+        .topbar-tools-item {
+          text-decoration: none;
+          border-radius: 7px;
+          padding: 7px 10px;
+          font-size: 12px;
+          color: var(--color-muted);
+          transition: background 0.15s, color 0.15s;
+          white-space: nowrap;
+        }
+        .topbar-tools-item:hover {
+          background: var(--c-brand-subtle);
+          color: var(--color-fg);
+        }
         .topbar-version {
           font-size: 11px;
           font-weight: 600;
@@ -155,6 +222,7 @@ export function Topbar({ sidebarOpen, onToggle }: TopbarProps) {
             <span style={{ color: "var(--color-brand)" }}>Bricks</span>
             <span style={{ color: "var(--color-fg)" }}>lab</span>
             <span style={{ color: "var(--color-brand)" }}>.</span>
+            <span style={{ color: "var(--color-fg)" }}>Tools</span>
           </span>
           <span className="topbar-version" aria-label={`Version @brickslab./ui-web ${uiWebVersion}`}>
             {uiWebVersion}
@@ -192,6 +260,48 @@ export function Topbar({ sidebarOpen, onToggle }: TopbarProps) {
               </Link>
             );
           })}
+          <div className="topbar-tools" ref={toolsRef}>
+            <button
+              type="button"
+              className="topbar-navlink topbar-tools-btn"
+              aria-haspopup="menu"
+              aria-expanded={toolsOpen}
+              onClick={() => setToolsOpen((prev) => !prev)}
+              style={{
+                fontWeight: isToolsActive ? 600 : 400,
+                color: isToolsActive ? "var(--color-brand)" : "var(--color-muted)",
+                borderBottomColor: isToolsActive ? "var(--color-brand)" : "transparent",
+              }}
+            >
+              <KineticUnderlineText trigger="hover">Outils</KineticUnderlineText>
+              <span aria-hidden="true" style={{ fontSize: 10, transform: toolsOpen ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>
+                ▾
+              </span>
+            </button>
+            {toolsOpen && (
+              <div className="topbar-tools-menu" role="menu" aria-label="Outils">
+                {toolsNavItems.map(({ label, href }) => {
+                  const isActive = pathname === href;
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      role="menuitem"
+                      className="topbar-tools-item"
+                      onClick={() => setToolsOpen(false)}
+                      style={{
+                        color: isActive ? "var(--color-brand)" : "var(--color-muted)",
+                        background: isActive ? "var(--c-brand-subtle)" : "transparent",
+                        fontWeight: isActive ? 600 : 500,
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Spacer */}

@@ -3187,7 +3187,7 @@ const DOCS_SECTIONS = [
   {
     title: "Documentation",
     items: [
-      { label: "Getting Started", href: "/docs" },
+      { label: "Documentation", href: "/docs" },
       { label: "Installation", href: "/docs/installation" },
       { label: "Theming", href: "/docs/theming" },
       { label: "Composants", href: "/docs/components" },
@@ -3214,7 +3214,7 @@ function DocumentationTemplate() {
       sidebar={<SidebarNav sections={DOCS_SECTIONS} activePath="/docs" width={220} />}
     >
       <div style={{ padding: "28px 32px", maxWidth: 1000 }}>
-        <Breadcrumb items={[{ label: "Docs", href: "/docs" }, { label: "Getting Started" }]} />
+        <Breadcrumb items={[{ label: "Docs", href: "/docs" }, { label: "Documentation" }]} />
         <h1 style={{ fontSize: 24, fontWeight: 700, color: "var(--color-fg)", marginTop: 12, marginBottom: 12 }}>
           Documentation produit
         </h1>
@@ -3244,7 +3244,7 @@ const DOCS_NAV = [
   {
     title: "Documentation",
     items: [
-      { label: "Getting Started", href: "/docs" },
+      { label: "Documentation", href: "/docs" },
       { label: "Installation", href: "/docs/installation" },
       { label: "Theming", href: "/docs/theming" },
       { label: "Composants", href: "/docs/components" },
@@ -3261,7 +3261,7 @@ export default function DocsHomePage() {
       sidebar={<SidebarNav sections={DOCS_NAV} activePath="/docs" width={220} />}
     >
       <div style={{ padding: "28px 32px", maxWidth: 1000 }}>
-        <Breadcrumb items={[{ label: "Docs", href: "/docs" }, { label: "Getting Started" }]} />
+        <Breadcrumb items={[{ label: "Docs", href: "/docs" }, { label: "Documentation" }]} />
         <h1 style={{ fontSize: 24, fontWeight: 700, color: "var(--color-fg)", marginTop: 12, marginBottom: 12 }}>Documentation produit</h1>
         <p style={{ color: "var(--color-muted)", fontSize: 14, lineHeight: 1.7, marginBottom: 18 }}>Template orienté documentation technique avec navigation latérale.</p>
         <LatestComponentsList title="Guides populaires" ctaLabel="Voir tous les guides" ctaHref="#" items={[{ label: "Installer le package", section: "Setup", type: "web", href: "#" }, { label: "Configurer les tokens", section: "Theming", type: "web", href: "#" }, { label: "Créer une page composant", section: "Catalog", type: "web", href: "#" }, { label: "Déployer en production", section: "Release", type: "web", href: "#" }]} />
