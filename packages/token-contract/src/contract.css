@@ -1,0 +1,128 @@
+:root {
+  /* Align items */
+  --align-items-center: center;
+  
+  --color-bg: #ffffff;
+  --color-fg: #0b1220;
+  --color-muted: #52607a;
+  /* couleur de marque par défaut ; rouge perle dans la charte */
+  --color-brand: #CC4A48;
+  /* semantic status colors */
+  --color-success: #4ADE80;
+  --color-warning: #F59E0B;
+  --color-error:   #CC4A48;
+  --color-info:    #3B82F6;
+  --color-transparent: transparent;
+
+  /* Border style */
+  --border-solid: solid;
+  --border-dotted: dotted;
+  --border-double: double;
+
+  /* Border width */
+  --border-xm: 1px;
+  --border-sm: 2px;
+  --border-md: 4px;
+
+  /* Blur Variables */
+  --blur-min: 1;
+  --blur-medium: 2;
+  --blur-high: 3;
+  --blur-extra: 4;
+  --blur-max: 5;
+
+  /* Clamp content */
+  --clamp-content: clamp(220px, 25vw, 320px);
+
+  /* Display style */
+  --display-flex: flex;
+
+  /* fontsize variables */
+  --fontsize-2xs: 10px;
+  --fontsize-xs: 12px;
+  --fontsize-sm: 14px;
+  --fontsize-medium: 16px;
+  --fontsize-lg: clamp(18px, 5vw, 48px);
+  --fontsize-xl: clamp(20px, 5vw, 48px);
+  --fontsize-2xl: clamp(24px, 5vw, 48px);
+  --fontsize-3xl: clamp(30px, 5vw, 48px);
+  --fontsize-4xl: clamp(36px, 5vw, 48px);
+  --fontsize-5xl: clamp(32px, 5vw, 48px);
+
+  /* fontweight variables */
+  --fontweight-thin: 100;
+  --fontweight-normal: 400;
+  --fontweight-extralight: 200;
+  --fontweight-light: 300;
+  --fontweight-medium: 500;
+  --fontweight-semibold: 600;
+  --fontweight-bold: 700;
+  --fontweight-extrabold: 800;
+  --fontweight-black: 900;
+
+  /* height */
+  --height-xm: 1px;
+  --height-sm: 8px;
+  --height-md: 32px;
+  --height-input: 38px;
+  --height-lg: 42px;
+  --height-xl: 62px;
+  --height-2xl: 150px;
+  
+  /* Margin Variables */
+  --margin-sm: 4px;
+  --margin-md: 8px;
+  --margin-lg: 12px;
+
+  /* Padding Variables */
+  --padding-sm: 4px;
+  --padding-md: 8px;
+  --padding-lg: 12px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* Spacing for marging and padding */
+  --space-1: 2px;
+  --space-1-5: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-15: 60px;
+  --space-20: 80px;
+
+  /* Shadows style for boxShadow */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+  /* Transition animation */
+  --transition-bg: background 0.2s ease;
+  --transition-all: all 0.2s ease;
+
+  /* Focus ring — accessibility (interactive components) */
+  --focus-ring: 0 0 0 3px rgba(204, 74, 72, 0.25);
+
+  /* z-index — stacking contexts */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+
+  /* width */
+  --widht-4xl: 100%;
+  
+  /* z-drawer */
+  --z-drawer: 50;
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-2)
+}

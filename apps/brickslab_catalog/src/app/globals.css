@@ -1,0 +1,136 @@
+@layer base, components, utilities;
+@import "@brickslab./token-contract/dist/contract.css";
+@import "@brickslab./theme-default/dist/tokens.css";
+@source "../../node_modules/@brickslab./ui-web";
+@source "../../packages/ui-web";
+
+/* ── App‑specific surface tokens ------------------------------------------------
+   These values are not part of the core contract/theme packages. They are
+   used by the catalog to style panels, borders and active states. Feel free to
+   move them into your own theme if you want to share with other projects.
+*/
+:root {
+  --font-brand: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --c-surface:          #ffffff;
+  --c-surface-elevated: #f7f7f7;
+  --c-surface-secondary: #f5f5f5;
+  --c-border:           #e0e0e0;
+  /* red subtle for active and borders */
+  --c-brand-subtle:     rgba(204, 74, 72, 0.08);
+  --c-brand-border:     rgba(204, 74, 72, 0.3);
+}
+
+/* dark variants of the same surface tokens */
+:root.dark {
+  --c-surface:          #161A22;
+  --c-surface-elevated: #1D2330;
+  --c-surface-secondary: #212936;
+  --c-border:           #2A3140;
+  --c-brand-subtle:     rgba(204, 74, 72, 0.08);
+  --c-brand-border:     rgba(204, 74, 72, 0.3);
+}
+
+/* common reset */
+*  { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-brand), Montserrat, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar dark */
+::-webkit-scrollbar             { width: 6px; height: 6px; }
+::-webkit-scrollbar-track       { background: var(--c-surface); }
+::-webkit-scrollbar-thumb       { background: var(--c-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3A4860; }
+
+/* adjust scrollbars for light theme */
+:root.light ::-webkit-scrollbar-track { background: #f0f0f0; }
+:root.light ::-webkit-scrollbar-thumb { background: #c0c0c0; }
+:root.light ::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+
+.card-hover:hover { box-shadow: var(--shadow-2); }
+
+/* layout helpers */
+/* Sidebar is a controlled drawer — visibility handled by inline styles in Sidebar.tsx */
+
+.catalog-main {
+  margin-left: 0;
+  margin-top: 60px;
+  padding: clamp(24px, 4vw, 56px);
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.catalog-footer {
+  margin-left: 0;
+}
+
+/* Accessible focus outline globally */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* interactive helpers */
+.interactive-card {
+  padding: 32px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background-color: var(--c-surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.interactive-card:hover,
+.interactive-card:focus-within {
+  border-color: var(--color-brand);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+.interactive-card:focus-visible {
+  outline: 2px solid var(--color-brand);
+}
+
+.link-hover:hover,
+.link-hover:focus-visible {
+  color: var(--color-brand);
+  text-decoration: underline;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  white-space: nowrap;
+  border: 1px solid var(--c-border);
+}
+.filter-button.active {
+  border-width: 2px;
+}
+.filter-button:not(.active):hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand)08;
+}
+
+/* utility hidden label (screen reader only) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

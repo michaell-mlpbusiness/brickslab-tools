@@ -1,0 +1,19 @@
+import React from "react";
+
+export type AccordionVariant = "bordered" | "separated" | "ghost";
+export type AccordionSize = "sm" | "md" | "lg";
+
+export interface AccordionProps {
+  children: React.ReactNode;
+  variant?: AccordionVariant;
+  size?: AccordionSize;
+}
+
+export interface AccordionItemProps {
+  title: React.ReactNode;
+  children: React.ReactNode;
+  open?: boolean;
+  onToggle?: (open: boolean) => void;
+  disabled?: boolean;
+  icon?: React.ReactNode;
+}

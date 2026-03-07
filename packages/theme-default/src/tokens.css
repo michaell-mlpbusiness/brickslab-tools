@@ -1,0 +1,222 @@
+:root {
+  /* ──────────────────────────────────────────────────────────────
+     LIGHT MODE - Default theme implementation
+     ────────────────────────────────────────────────────────────── */
+
+  /* ── COLORS: Semantic ──────────────────────────────────────── */
+  --color-bg: #ffffff;
+  --color-fg: #0b1220;
+  --color-muted: #52607a;
+  --color-brand: #CC4A48;
+  --color-brand-dark: #8F2834;
+  --color-excellent: #22C55E;
+  --color-success: #4ADE80;
+  --color-warning: #F59E0B;
+  --color-error: #CC4A48;
+  --color-info: #3B82F6;
+
+  /* ── COLORS: Surfaces (App-specific, but part of theme) ────── */
+  --c-surface: #ffffff;
+  --c-surface-elevated: #f7f7f7;
+  --c-surface-secondary: #f5f5f5;
+  --c-table-row-alt: rgba(0, 0, 0, 0.02);
+  --c-border: #e0e0e0;
+  --c-brand-subtle: rgba(204, 74, 72, 0.08);
+  --c-brand-border: rgba(204, 74, 72, 0.3);
+
+  /* ── COLORS: Status subtle (for Alert, Banner, Badge) ──────── */
+  --c-success-subtle: rgba(74, 222, 128, 0.10);
+  --c-warning-subtle: rgba(245, 158, 11, 0.10);
+  --c-info-subtle:    rgba(59, 130, 246, 0.10);
+  /* --c-error-subtle = --c-brand-subtle */
+
+  /* ── COLORS: Status borders ─────────────────────────────────── */
+  --c-success-border: rgba(74, 222, 128, 0.35);
+  --c-warning-border: rgba(245, 158, 11, 0.35);
+  --c-info-border:    rgba(59, 130, 246, 0.35);
+  /* --c-error-border = --c-brand-border */
+
+  /* ── SPACING ──────────────────────────────────────────────── */
+  /* Already defined in contract, reinforcing here for clarity */
+  --space-1: 2px;  --space-1-5: 4px;  --space-2: 8px;
+  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px;   --space-7: 28px;
+  --space-8: 32px; --space-10: 40px;  --space-12: 48px;
+  --space-15: 60px; --space-20: 80px;
+
+  /* ── TYPOGRAPHY ───────────────────────────────────────────── */
+  /* Font sizes (from contract) */
+  --fontsize-2xs: 10px;
+  --fontsize-xs: 12px;
+  --fontsize-sm: 14px;
+  --fontsize-medium: 16px;
+  --fontsize-lg: clamp(18px, 5vw, 48px);
+  --fontsize-xl: clamp(20px, 5vw, 48px);
+  --fontsize-2xl: clamp(24px, 5vw, 48px);
+  --fontsize-3xl: clamp(30px, 5vw, 48px);
+  --fontsize-4xl: clamp(36px, 5vw, 48px);
+  --fontsize-5xl: clamp(32px, 5vw, 48px);
+
+  /* Font weights (from contract) */
+  --fontweight-normal: 400;
+  --fontweight-light: 300;
+  --fontweight-medium: 500;
+  --fontweight-semibold: 600;
+  --fontweight-bold: 700;
+  --fontweight-extrabold: 800;
+  --fontweight-black: 900;
+
+  /* ── RADIUS ───────────────────────────────────────────────– */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* ── SHADOWS ──────────────────────────────────────────────– */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+  /* ── GRADIENTS ────────────────────────────────────────────– */
+  --gradient-brand: linear-gradient(135deg, var(--color-brand) 0%, rgba(204, 74, 72, 0.8) 100%);
+
+  /* ── Z-INDEX ──────────────────────────────────────────────– */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-drawer: 50;
+  --z-modal: 1000;
+  /* ── LAYOUT ───────────────────────────────────────────────– */
+  --height-topbar: 60px;
+  --height-input: 38px;
+
+  /* ── TRANSITIONS ──────────────────────────────────────────– */
+  --transition-bg:  background 0.2s ease;
+  --transition-all: all 0.2s ease;
+
+  /* ── FOCUS RING — accessibilité ────────────────────────────– */
+  --focus-ring: 0 0 0 3px rgba(204, 74, 72, 0.25);
+
+  /* ── MISC (From contract) ───────────────────────────────── */
+  --border-solid: solid;
+  --display-flex: flex;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   DARK MODE - System preference override
+   ────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* ── COLORS: Semantic ──────────────────────────────────── */
+    --color-bg: #0F1116;
+    --color-fg: #FBFBFB;
+    --color-muted: #B7BCC6;
+    --color-brand: #CC4A48;
+    --color-brand-dark: #8F2834;    --color-excellent: #10B981;    --color-success: #34D399;
+    --color-warning: #F59E0B;
+    --color-error: #F87171;
+    --color-info: #60A5FA;
+
+    /* ── COLORS: Surfaces ──────────────────────────────────– */
+    --c-surface: #161A22;
+    --c-surface-elevated: #1D2330;
+    --c-surface-secondary: #212936;
+    --c-table-row-alt: rgba(255, 255, 255, 0.04);
+    --c-border: #2A3140;
+    --c-brand-subtle: rgba(204, 74, 72, 0.08);
+    --c-brand-border: rgba(204, 74, 72, 0.3);
+
+    /* ── COLORS: Status subtle ─────────────────────────────– */
+    --c-success-subtle: rgba(52, 211, 153, 0.12);
+    --c-warning-subtle: rgba(245, 158, 11, 0.12);
+    --c-info-subtle:    rgba(96, 165, 250, 0.12);
+
+    /* ── COLORS: Status borders ────────────────────────────– */
+    --c-success-border: rgba(52, 211, 153, 0.35);
+    --c-warning-border: rgba(245, 158, 11, 0.35);
+    --c-info-border:    rgba(96, 165, 250, 0.35);
+
+    /* ── SHADOWS (Darker for dark mode) ───────────────────– */
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.16);
+    --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.24);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   LIGHT MODE - CSS Class override (for manual theme toggle)
+   ────────────────────────────────────────────────────────────── */
+:root.light {
+  /* ── COLORS: Semantic ──────────────────────────────────── */
+  --color-bg: #ffffff;
+  --color-fg: #0b1220;
+  --color-muted: #52607a;
+  --color-brand: #CC4A48;
+  --color-brand-dark: #8F2834;
+  --color-excellent: #22C55E;
+  --color-success: #4ADE80;
+  --color-warning: #F59E0B;
+  --color-error: #CC4A48;
+  --color-info: #3B82F6;
+
+  /* ── COLORS: Surfaces ──────────────────────────────────– */
+  --c-surface: #ffffff;
+  --c-surface-elevated: #f7f7f7;
+  --c-surface-secondary: #f5f5f5;
+  --c-table-row-alt: rgba(0, 0, 0, 0.02);
+  --c-border: #e0e0e0;
+  --c-brand-subtle: rgba(204, 74, 72, 0.08);
+  --c-brand-border: rgba(204, 74, 72, 0.3);
+
+  /* ── COLORS: Status subtle ─────────────────────────────– */
+  --c-success-subtle: rgba(74, 222, 128, 0.10);
+  --c-warning-subtle: rgba(245, 158, 11, 0.10);
+  --c-info-subtle:    rgba(59, 130, 246, 0.10);
+
+  /* ── COLORS: Status borders ────────────────────────────– */
+  --c-success-border: rgba(74, 222, 128, 0.35);
+  --c-warning-border: rgba(245, 158, 11, 0.35);
+  --c-info-border:    rgba(59, 130, 246, 0.35);
+
+  /* ── SHADOWS ──────────────────────────────────────────– */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   DARK MODE - CSS Class override (for manual theme toggle)
+   ────────────────────────────────────────────────────────────── */
+:root.dark {
+  /* ── COLORS: Semantic ──────────────────────────────────── */
+  --color-bg: #0F1116;
+  --color-fg: #FBFBFB;
+  --color-muted: #B7BCC6;
+  --color-brand: #CC4A48;
+  --color-brand-dark: #8F2834;
+  --color-excellent: #10B981;
+  --color-success: #34D399;
+  --color-warning: #F59E0B;
+  --color-error: #F87171;
+  --color-info: #60A5FA;
+
+  /* ── COLORS: Surfaces ──────────────────────────────────– */
+  --c-surface: #161A22;
+  --c-surface-elevated: #1D2330;
+  --c-surface-secondary: #212936;
+  --c-table-row-alt: rgba(255, 255, 255, 0.04);
+  --c-border: #2A3140;
+  --c-brand-subtle: rgba(204, 74, 72, 0.08);
+  --c-brand-border: rgba(204, 74, 72, 0.3);
+
+  /* ── COLORS: Status subtle ─────────────────────────────– */
+  --c-success-subtle: rgba(52, 211, 153, 0.12);
+  --c-warning-subtle: rgba(245, 158, 11, 0.12);
+  --c-info-subtle:    rgba(96, 165, 250, 0.12);
+
+  /* ── COLORS: Status borders ────────────────────────────– */
+  --c-success-border: rgba(52, 211, 153, 0.35);
+  --c-warning-border: rgba(245, 158, 11, 0.35);
+  --c-info-border:    rgba(96, 165, 250, 0.35);
+
+  /* ── SHADOWS ──────────────────────────────────────────– */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.16);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+

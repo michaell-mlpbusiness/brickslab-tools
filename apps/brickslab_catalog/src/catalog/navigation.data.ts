@@ -1,0 +1,247 @@
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface NavSection {
+  section: string;
+  items: NavItem[];
+}
+
+// shared navigation data for sidebar and mobile nav
+export const navSections: NavSection[] = [
+  {
+    section: "Navigation",
+    items: [
+      { label: "Accueil", href: "/" },
+      { label: "Getting Started", href: "/getting-started" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Catalogue", href: "/catalog" },
+      { label: "Mobile UI", href: "/mobile" },
+      { label: "Résultats Tests", href: "/tests" },
+      { label: "Templates", href: "/templates" },
+    ],
+  },
+  {
+    section: "Outils",
+    items: [
+      { label: "Theme Builder", href: "/components/themebuilder" },
+      { label: "Mockup Builder", href: "/components/mockupbuilder" },
+    ],
+  },
+  {
+    section: "Layout & Shell",
+    items: [
+      { label: "AppShell", href: "/components/appshell" },
+      { label: "HeaderBar", href: "/components/headerbar" },
+      { label: "SidebarNav", href: "/components/sidebarnav" },
+      { label: "TopNav", href: "/components/topnav" },
+      { label: "FooterBar", href: "/components/footerbar" },
+      { label: "BurgerMenu", href: "/components/burgermenu" },
+      { label: "BentoGrid", href: "/components/bentogrid" },
+    ],
+  },
+  {
+    section: "Catalog Infrastructure",
+    items: [
+      { label: "Topbar", href: "/components/topbar" },
+      { label: "Sidebar", href: "/components/sidebar" },
+      { label: "SearchResults", href: "/components/searchresults" },
+      { label: "ThemeToggle", href: "/components/themetoggle" },
+    ],
+  },
+  {
+    section: "Dashboard",
+    items: [
+      { label: "ComponentsCountCard", href: "/components/componentscountcard" },
+      { label: "LatestComponentsList", href: "/components/latestcomponentslist" },
+      { label: "TestResultsCard", href: "/components/testresultscard" },
+      { label: "KpiCard", href: "/components/kpicard" },
+      { label: "DashboardHero", href: "/components/dashboardhero" },
+    ],
+  },
+  {
+    section: "Navigation UI",
+    items: [
+      { label: "LogoMark", href: "/components/logomark" },
+      { label: "SearchBar", href: "/components/searchbar" },
+      { label: "MenuTree", href: "/components/menutree" },
+      { label: "Breadcrumb", href: "/components/breadcrumb" },
+    ],
+  },
+  {
+    section: "Catalogue / Docs",
+    items: [
+      { label: "SectionGallery", href: "/components/sectiongallery" },
+      { label: "SectionExampleCard", href: "/components/sectionexamplecard" },
+      { label: "ComponentDetailPanel", href: "/components/componentdetailpanel" },
+      { label: "ComponentCard", href: "/components/componentcard" },
+      { label: "DocPageHeader", href: "/components/docpageheader" },
+      { label: "PageHero", href: "/components/pagehero" },
+      { label: "PropsTable", href: "/components/propstable" },
+      { label: "CodeBlock", href: "/components/codeblock" },
+      { label: "CopyButton", href: "/components/copybutton" },
+      { label: "LinkList", href: "/components/linklist" },
+    ],
+  },
+  {
+    section: "Carrousel",
+    items: [{ label: "MediaCarousel", href: "/components/mediacarousel" }],
+  },
+  {
+    section: "Cards & Contenus",
+    items: [
+      { label: "IntroCard", href: "/components/introcard" },
+      { label: "TextCard", href: "/components/textcard" },
+      { label: "BentoCard", href: "/components/bentocard" },
+      { label: "SocialPostCard", href: "/components/socialpostcard" },
+      { label: "ProjectDescriptionPanel", href: "/components/projectdescriptionpanel" },
+    ],
+  },
+  {
+    section: "Typographie",
+    items: [
+      { label: "Heading", href: "/components/heading" },
+      { label: "Text", href: "/components/text" },
+      { label: "TextBlock", href: "/components/textblock" },
+    ],
+  },
+  {
+    section: "UI Controls",
+    items: [
+      { label: "Button", href: "/components/button" },
+      { label: "Input", href: "/components/input" },
+      { label: "Select", href: "/components/select" },
+      { label: "Textarea", href: "/components/textarea" },
+      { label: "Tooltip", href: "/components/tooltip" },
+      { label: "Alert", href: "/components/alert" },
+      { label: "Badge", href: "/components/badge" },
+      { label: "Spinner", href: "/components/spinner" },
+      { label: "Checkbox", href: "/components/checkbox" },
+      { label: "Radio", href: "/components/radio" },
+      { label: "Tabs", href: "/components/tabs" },
+      { label: "Accordion", href: "/components/accordion" },
+      { label: "ToggleSwitch", href: "/components/toggle" },
+      { label: "TagChip", href: "/components/tagchip" },
+      { label: "StatusLabel", href: "/components/statuslabel" },
+      { label: "AvatarCircles", href: "/components/avatarcircles" },
+      { label: "Confetti", href: "/components/confetti" },
+      { label: "ConfettiButton", href: "/components/confettibutton" },
+      { label: "ThemeToggler", href: "/components/themetoggler" },
+      { label: "ThemeToggleSimple", href: "/components/themetogglesimple" },
+      { label: "MediaImage", href: "/components/mediaimage" },
+      { label: "LocationMap", href: "/components/locationmap" },
+      { label: "ProgressBar", href: "/components/progressbar" },
+      { label: "Callout", href: "/components/callout" },
+    ],
+  },
+  {
+    section: "Footer",
+    items: [
+      { label: "FooterLinks", href: "/components/footerlinks" },
+      { label: "SocialLinks", href: "/components/sociallinks" },
+      { label: "FooterContact", href: "/components/footercontact" },
+      { label: "FooterLegal", href: "/components/footerlegal" },
+      { label: "BrandSlogan", href: "/components/brandslogan" },
+    ],
+  },
+  {
+    section: "Sections",
+    items: [
+      { label: "CarouselWithTextSection", href: "/components/carouselwithtextsection" },
+      { label: "HeroCtaSection", href: "/components/heroctasection" },
+      { label: "FeatureListSection", href: "/components/featurelistsection" },
+      { label: "SectionHeader", href: "/components/sectionheader" },
+      { label: "ComponentPresentationSection", href: "/components/componentpresentationsection" },
+    ],
+  },
+  {
+    section: "Quiz",
+    items: [
+      { label: "QuizBuilder", href: "/components/quizbuilder" },
+      { label: "QuizSection", href: "/components/quizsection" },
+      { label: "QuestionCard", href: "/components/questioncard" },
+      { label: "QuestionRenderer", href: "/components/questionrenderer" },
+      { label: "ConditionalLogic", href: "/components/conditionallogic" },
+      { label: "SingleChoice", href: "/components/singlechoice" },
+      { label: "MultiChoice", href: "/components/multichoice" },
+      { label: "ScaleLikert", href: "/components/scalelikert" },
+      { label: "RatingStars", href: "/components/ratingstars" },
+      { label: "NPSQuestion", href: "/components/npsquestion" },
+      { label: "RangeSliderQuestion", href: "/components/rangesliderquestion" },
+      { label: "FreeTextQuestion", href: "/components/freetextquestion" },
+      { label: "MatrixQuestion", href: "/components/matrixquestion" },
+      { label: "RankOrderQuestion", href: "/components/rankorderquestion" },
+      { label: "QuizProgress", href: "/components/quizprogress" },
+      { label: "QuizTimer", href: "/components/quiztimer" },
+      { label: "QuizNavigation", href: "/components/quiznavigation" },
+      { label: "QuizSubmitBar", href: "/components/quizsubmitbar" },
+      { label: "QuizResultSummary", href: "/components/quizresultsummary" },
+      { label: "AnswerReview", href: "/components/answerreview" },
+      { label: "ResponseTable", href: "/components/responsetable" },
+    ],
+  },
+  {
+    section: "Analytics",
+    items: [
+      { label: "InsightCards", href: "/components/insightcards" },
+      { label: "SurveyFunnel", href: "/components/surveyfunnel" },
+      { label: "DistributionChart", href: "/components/distributionchart" },
+      { label: "HeatmapMatrix", href: "/components/heatmapmatrix" },
+      { label: "CohortTrends", href: "/components/cohorttrends" },
+      { label: "SegmentFilterBar", href: "/components/segmentfilterbar" },
+      { label: "DashboardGrid", href: "/components/dashboardgrid" },
+      { label: "KPITrendWidget", href: "/components/kpitrendwidget" },
+      { label: "AnomalyBadge", href: "/components/anomalybadge" },
+      { label: "DrilldownPanel", href: "/components/drilldownpanel" },
+    ],
+  },
+  {
+    section: "Animation",
+    items: [
+      { label: "Marquee", href: "/components/marquee" },
+      { label: "AnimatedList", href: "/components/animatedlist" },
+      { label: "AnimatedStack", href: "/components/animatedstack" },
+    ],
+  },
+  {
+    section: "Backgrounds",
+    items: [
+      { label: "WarpBackground", href: "/components/warpbackground" },
+      { label: "FlickeringGrid", href: "/components/flickeringgrid" },
+      { label: "AnimatedGridPattern", href: "/components/animatedgridpattern" },
+      { label: "RetroGrid", href: "/components/retrogrid" },
+      { label: "RippleBackground", href: "/components/ripplebackground" },
+      { label: "DotPattern", href: "/components/dotpattern" },
+      { label: "GridPattern", href: "/components/gridpattern" },
+      { label: "StripedPattern", href: "/components/stripedpattern" },
+      { label: "InteractiveGridPattern", href: "/components/interactivegridpattern" },
+      { label: "LightRaysBackground", href: "/components/lightraysbackground" },
+      { label: "NoiseMeshBackground", href: "/components/noisemeshbackground" },
+      { label: "GlassAuroraBackground", href: "/components/glassaurorabackground" },
+    ],
+  },
+  {
+    section: "Animated Text",
+    items: [
+      { label: "TextAnimate", href: "/components/textanimate" },
+      { label: "TypingAnimation", href: "/components/typinganimation" },
+      { label: "AuroraText", href: "/components/auroratext" },
+      { label: "NumberTicker", href: "/components/numberticker" },
+      { label: "AnimatedGradientText", href: "/components/animatedgradienttext" },
+      { label: "TextReveal", href: "/components/textreveal" },
+      { label: "WordRotate", href: "/components/wordrotate" },
+      { label: "HyperText", href: "/components/hypertext" },
+      { label: "SparklesText", href: "/components/sparklestext" },
+      { label: "TextHighlighter", href: "/components/texthighlighter" },
+      { label: "NoiseRevealText", href: "/components/noiserevealtext" },
+      { label: "VariableFontWarpText", href: "/components/variablefontwarptext" },
+      { label: "MagneticText", href: "/components/magnetictext" },
+      { label: "KineticUnderlineText", href: "/components/kineticunderlinetext" },
+      { label: "ShimmerBorderText", href: "/components/shimmerbordertext" },
+      { label: "GlowPulseText", href: "/components/glowpulsetext" },
+      { label: "SegmentEmphasisText", href: "/components/segmentemphasistext" },
+      { label: "ProgressiveBlurText", href: "/components/progressiveblurtext" },
+    ],
+  },
+];

@@ -1,0 +1,159 @@
+label,section,type,description,href,addedAt
+AppShell,Layout & Shell,web,Container component for page layout with header sidebar and footer,/components/appshell,
+HeaderBar,Layout & Shell,web,Top navigation and branding header component,/components/headerbar,
+FooterBar,Layout & Shell,web,Footer with links branding and social media,/components/footerbar,
+SidebarNav,Layout & Shell,web,Vertical navigation sidebar for main menu,/components/sidebarnav,
+BurgerMenu,Layout & Shell,web,Mobile hamburger menu with overlay navigation,/components/burgermenu,
+TopNav,Layout & Shell,web,Alternative top navigation component,/components/topnav,
+BentoGrid,Layout & Shell,web,Responsive bento grid layout with auto-fit dense mode and customizable columns,/components/bentogrid,2026-03-05
+LogoMark,Navigation,web,Brand logo mark component,/components/logomark,
+SearchBar,Navigation,web,Input field for searching and filtering,/components/searchbar,
+MenuTree,Navigation,web,Hierarchical menu with expandable items,/components/menutree,
+Breadcrumb,Navigation,web,Navigation trail component showing page hierarchy,/components/breadcrumb,
+MediaCarousel,Carousel,web,Carousel for displaying images and media with autoplay,/components/mediacarousel,
+Marquee,Animation,web,Infinite horizontal or vertical scroll with pause on hover and reverse direction,/components/marquee,2026-03-05
+AnimatedList,Animation,web,List with staggered sequential item animations and loop support,/components/animatedlist,2026-03-05
+AnimatedStack,Animation,web,Notification stack with card pile effect — new items pop from top with bounce and stack behind,/components/animatedstack,2026-03-06
+Heading,Typography,web,Text heading component with multiple levels,/components/heading,
+Text,Typography,web,Body text and paragraph component,/components/text,
+TextBlock,Typography,web,Multi-line text content block,/components/textblock,
+Button,UI Controls,web,Versatile action button with 4 variants sizes icons and loading state,/components/button,
+Input,UI Controls,web,Controlled text input with label helper error icons and 3 sizes,/components/input,
+Select,UI Controls,web,Controlled native select with label helper error states and 3 sizes,/components/select,
+Textarea,UI Controls,web,Controlled multi-line text area with label helper error counter and autoResize,/components/textarea,
+TagChip,UI Controls,web,Small label or tag component with removable option,/components/tagchip,
+StatusLabel,UI Controls,web,Badge showing component or feature status,/components/statuslabel,
+ToggleSwitch,UI Controls,web,Binary switch component for on/off states,/components/toggle,
+AvatarCircles,UI Controls,web,Stacked avatar circles with overlap and counter badge,/components/avatarcircles,2026-03-05
+Confetti,UI Controls,web,Canvas-based confetti animation effect with customizable particles,/components/confetti,2026-03-05
+ConfettiButton,UI Controls,web,Button that triggers confetti animation on click,/components/confettibutton,2026-03-05
+ThemeToggler,UI Controls,web,Theme toggle with animated transition between light dark and system modes,/components/themetoggler,2026-03-05
+ThemeToggleSimple,UI Controls,web,Simple theme toggle without animations for accessibility,/components/themetogglesimple,2026-03-05
+MediaImage,UI Controls,web,Responsive image component with lazy loading,/components/mediaimage,
+LocationMap,UI Controls,web,Map component for displaying a place location with coordinates and OpenStreetMap embed,/components/locationmap,2026-03-06
+CopyButton,UI Controls,web,Button that copies content to clipboard,/components/copybutton,
+IntroCard,Cards,web,Hero/intro card component with gradient background and CTA,/components/introcard,
+TextCard,Cards,web,Card component displaying text content,/components/textcard,
+BentoCard,Cards,web,Feature card for bento grid with icon title description and hover effects,/components/bentocard,2026-03-05
+SocialPostCard,Cards,web,Data-driven social post card supporting X LinkedIn and custom platforms with metrics,/components/socialpostcard,2026-03-05
+SectionExampleCard,Cards,web,Card showcasing component examples,/components/sectionexamplecard,
+SectionGallery,Sections,web,Gallery layout for showcasing multiple items,/components/sectiongallery,
+SectionHeader,Sections,web,Header section for page introductions,/components/sectionheader,
+HeroCTASection,Sections,web,Large hero banner with call-to-action,/components/heroctasection,
+FeatureListSection,Sections,web,Section displaying feature list items,/components/featurelistsection,
+CarouselWithTextSection,Sections,web,Section combining carousel with text content,/components/carouselwithtextsection,
+BrandSlogan,Branding,web,Brand tagline and slogan display,/components/brandslogan,
+SocialLinks,Footer,web,Social media link list component,/components/sociallinks,
+FooterLinks,Footer,web,Navigation links in footer,/components/footerlinks,
+FooterLegal,Footer,web,Legal information section in footer,/components/footerlegal,
+FooterContact,Footer,web,Contact information in footer,/components/footercontact,
+LinkList,Catalog/Docs,web,List of links with optional descriptions for navigation or index sections,/components/linklist,
+CodeBlock,Catalog/Docs,web,Syntax-highlighted code display component,/components/codeblock,
+ComponentDetailPanel,Catalog/Docs,web,Details panel for component documentation,/components/componentdetailpanel,
+ComponentPresentationSection,Catalog/Docs,web,Section for presenting component variations,/components/componentpresentationsection,
+PropsTable,Catalog/Docs,web,Table showing component props and their types,/components/propstable,
+ProjectDescriptionPanel,Catalog/Docs,web,Panel with project description and details,/components/projectdescriptionpanel,
+ComponentCard,Catalog/Docs,web,Catalog card presenting a component with name section description platform badge and optional live preview,/components/componentcard,
+DocPageHeader,Catalog/Docs,web,Standard header for component documentation pages with name h1 description package badge and extra badges,/components/docpageheader,
+PageHero,Catalog/Docs,web,Full-width page hero with gradient mesh dot grid eyebrow stats row — replaces SectionHeader for main nav pages,/components/pagehero,2026-03-05
+Topbar,Catalog/App,web,Navigation bar with logo search and mobile menu,/components/topbar,
+Sidebar,Catalog/App,web,Desktop navigation sidebar with component sections,/components/sidebar,
+SearchResults,Catalog/App,web,Search results dropdown component,/components/searchresults,
+ThemeToggle,Catalog/App,web,Interrupteur thème sombre/clair,/components/themetoggle,
+ComponentsCountCard,Dashboard,web,Card showing the total number of catalogued components,/components/componentscountcard,
+LatestComponentsList,Dashboard,web,List of the most recently added components,/components/latestcomponentslist,
+TestResultsCard,Dashboard,web,Card summarizing automated test pass rates by component,/components/testresultscard,
+KpiCard,Dashboard,web,Small card displaying a key performance indicator with label value and helper,/components/kpicard,2026-03-05
+DashboardHero,Dashboard,web,Hero section for the dashboard with CTA and design system overview,/components/dashboardhero,2026-03-05
+QuizBuilder,Quiz,web,Visual quiz editor with builder preview and split modes — manages sections questions and autosave,/components/quizbuilder,2026-03-06
+QuizSection,Quiz,web,Collapsible section container for quiz questions with title description and helper text,/components/quizsection,2026-03-06
+QuestionCard,Quiz,web,Standardized question wrapper with label required indicator points status error and hint,/components/questioncard,2026-03-06
+QuestionRenderer,Quiz,web,Dynamic question renderer dispatching to the correct input component based on question type,/components/questionrenderer,2026-03-06
+ConditionalLogic,Quiz,web,Visual rule editor for IF-condition THEN-action quiz branching and scoring logic,/components/conditionallogic,2026-03-06
+SingleChoice,Quiz,web,Single-select question with radio or card variant and optional free-text other option,/components/singlechoice,2026-03-06
+MultiChoice,Quiz,web,Multi-select question with checkbox or tag variant and configurable min/max selection,/components/multichoice,2026-03-06
+ScaleLikert,Quiz,web,Likert scale from 1-5 to 1-10 with optional tick bar and extreme labels,/components/scalelikert,2026-03-06
+RatingStars,Quiz,web,Star heart or bolt icon rating with optional half-point precision and hover preview,/components/ratingstars,2026-03-06
+NPSQuestion,Quiz,web,Net Promoter Score 0-10 selector with detractor passive promoter color zones,/components/npsquestion,2026-03-06
+RangeSliderQuestion,Quiz,web,Single or dual-handle range slider with value display and unit label,/components/rangesliderquestion,2026-03-06
+FreeTextQuestion,Quiz,web,Single-line or multiline text input with character counter and min/max length validation,/components/freetextquestion,2026-03-06
+MatrixQuestion,Quiz,web,Rows x columns matrix for Likert multi-item grids with single or multi selection per row,/components/matrixquestion,2026-03-06
+RankOrderQuestion,Quiz,web,Drag-and-drop rank ordering list with arrow fallback and position badges,/components/rankorderquestion,2026-03-06
+QuizProgress,Quiz,web,Quiz progress indicator with bar steps and ring modes and optional label,/components/quizprogress,2026-03-06
+QuizTimer,Quiz,web,Countdown timer with warn and expire states and optional auto-submit callback,/components/quiztimer,2026-03-06
+QuizNavigation,Quiz,web,Previous Next navigation bar with optional summary panel and jump-to support,/components/quiznavigation,2026-03-06
+QuizSubmitBar,Quiz,web,Sticky submission bar with save-draft submit and reset actions and loading states,/components/quizsubmitbar,2026-03-06
+QuizResultSummary,Quiz,web,Post-quiz result card with score ring badges and recommendations in compact or detailed mode,/components/quizresultsummary,2026-03-06
+AnswerReview,Quiz,web,Question-by-question answer review with correct/incorrect feedback and correction display,/components/answerreview,2026-03-06
+ResponseTable,Quiz,web,Admin response table with client-side sort filter pagination and CSV/XLSX export,/components/responsetable,2026-03-06
+InsightCards,Analytics,web,Survey KPI cards grid with trend arrow delta badge and solid or glass variant,/components/insightcards,2026-03-06
+SurveyFunnel,Analytics,web,Start-to-complete funnel with bar and step modes drop-off labels and completion rates,/components/surveyfunnel,2026-03-06
+DistributionChart,Analytics,web,Horizontal bar chart with single bar stacked series and histogram modes,/components/distributionchart,2026-03-06
+HeatmapMatrix,Analytics,web,Color-intensity matrix for aggregated Likert or cross-tab data with optional scale legend,/components/heatmapmatrix,2026-03-06
+CohortTrends,Analytics,web,Multi-series SVG line chart with axis labels data point tooltips and legend,/components/cohorttrends,2026-03-06
+SegmentFilterBar,Analytics,web,Dashboard filter bar with text select date and tag fields presets and clear all,/components/segmentfilterbar,2026-03-06
+DashboardGrid,Analytics,web,Responsive CSS grid layout for widgets with optional drag-and-drop reorder in edit mode,/components/dashboardgrid,2026-03-06
+KPITrendWidget,Analytics,web,KPI card with SVG sparkline delta badge target progress bar and loading skeleton,/components/kpitrendwidget,2026-03-06
+AnomalyBadge,Analytics,web,Pulsing anomaly indicator badge with info warn and critical severity levels,/components/anomalybadge,2026-03-06
+DrilldownPanel,Analytics,web,Slide-in side panel for chart drilldown details with overlay and keyboard close,/components/drilldownpanel,2026-03-06
+Tooltip,UI Controls,web,Contextual help bubble with CSS-only hover behavior and 4 positions,/components/tooltip,
+Alert,UI Controls,web,Contextual feedback component with 4 variants info success warning error and optional dismiss,/components/alert,
+Badge,UI Controls,web,Compact non-interactive indicator for statuses counts and labels with dot and outlined modes,/components/badge,
+ProgressBar,UI Controls,web,Horizontal progress bar with 4 color schemes 2 sizes label and animated fill,/components/progressbar,
+Callout,UI Controls,web,Inline contextual message block for documentation with 4 variants and automatic icon and title,/components/callout,
+Spinner,UI Controls,web,CSS-only loading indicator with 6 color variants 4 sizes and 3 speeds via keyframe animation,/components/spinner,
+Checkbox,UI Controls,web,Styled checkbox with appearance:none SVG checkmark controlled state and 3 sizes,/components/checkbox,
+Radio,UI Controls,web,Styled radio button with RadioGroup wrapper for controlled selection vertical and horizontal layouts,/components/radio,
+Tabs,UI Controls,web,Controlled tab navigation with underline pills and boxed variants TabPanel content wrapper and icon support,/components/tabs,
+Accordion,UI Controls,web,Disclosure component based on native details/summary with controlled mode 3 variants and fade animation,/components/accordion,
+TextAnimate,Animated Text,web,Multi-segment text animation with presets fade blur slide scale rise by word char or line with viewport trigger and stagger,/components/textanimate,
+TypingAnimation,Animated Text,web,Typewriter effect with single text or word sequence cursor variants loop and delete speed control,/components/typinganimation,
+AuroraText,Animated Text,web,Moving aurora gradient applied to text via background-clip with configurable colors speed and blend mode,/components/auroratext,
+NumberTicker,Animated Text,web,Animated number counter with locale formatting prefix suffix separator and easing from start to target value,/components/numberticker,
+AnimatedGradientText,Animated Text,web,Animated gradient applied to text with shift rotate or pulse modes and linear or radial gradient support,/components/animatedgradienttext,
+TextReveal,Animated Text,web,Progressive scroll-driven text reveal by word character or line with fade and blur options,/components/textreveal,
+WordRotate,Animated Text,web,Dynamic headline word rotation with slide fade or flip transitions pause on hover and loop support,/components/wordrotate,
+HyperText,Animated Text,web,Character scramble effect triggered by hover tap auto or viewport with configurable character set and duration,/components/hypertext,
+SparklesText,Animated Text,web,Floating sparkle particles around text with configurable count size speed and colors,/components/sparklestext,
+TextHighlighter,Animated Text,web,SVG animated highlight underline box circle or strike overlay with hover view or manual trigger,/components/texthighlighter,
+NoiseRevealText,Animated Text,web,Cinematic noise-filter reveal using SVG feTurbulence and feDisplacementMap with directional clip animation,/components/noiserevealtext,
+VariableFontWarpText,Animated Text,web,Variable font axis animation on wght wdth slnt triggered by hover scroll or viewport,/components/variablefontwarptext,
+MagneticText,Animated Text,web,Magnetic parallax text that follows the cursor within a configurable radius with friction and strength,/components/magnetictext,
+KineticUnderlineText,Animated Text,web,Kinetic underline that expands from center on hover focus or active with configurable thickness and easing,/components/kineticunderlinetext,
+ShimmerBorderText,Animated Text,web,Text stroke outline with animated shimmer highlight in solid or transparent fill mode,/components/shimmerbordertext,
+GlowPulseText,Animated Text,web,Pulsing text glow via text-shadow animation triggered always on hover or on viewport entry,/components/glowpulsetext,
+SegmentEmphasisText,Animated Text,web,Intelligent text segment highlighting with raise glow underline or gradient effects on matched words,/components/segmentemphasistext,
+ProgressiveBlurText,Animated Text,web,Word-by-word blur-to-clear reveal triggered on scroll or viewport with staggered transitions,/components/progressiveblurtext,
+WarpBackground,Backgrounds,web,Animated skew and scale distortion effect with optional radial gradient mask,/components/warpbackground,2026-03-05
+FlickeringGrid,Backgrounds,web,SVG grid cells with flicker animation and customizable cell size and color,/components/flickeringgrid,2026-03-05
+AnimatedGridPattern,Backgrounds,web,Grid lines moving downward creating a continuous flow effect,/components/animatedgridpattern,2026-03-05
+RetroGrid,Backgrounds,web,Perspective 3D synthwave-style grid with perspective zoom animation and optional glow,/components/retrogrid,2026-03-05
+RippleBackground,Backgrounds,web,Concentric ripple rings expanding from center with customizable frequency and amplitude,/components/ripplebackground,2026-03-05
+DotPattern,Backgrounds,web,Static SVG dot matrix pattern with configurable dot size gap and opacity,/components/dotpattern,2026-03-05
+GridPattern,Backgrounds,web,Static SVG grid lines with solid or dashed variants and optional radial mask,/components/gridpattern,2026-03-05
+StripedPattern,Backgrounds,web,Diagonal stripes with optional scroll animation and customizable angle and width,/components/stripedpattern,2026-03-05
+InteractiveGridPattern,Backgrounds,web,Canvas-based mouse-responsive grid heat effect with customizable cell size and influence radius,/components/interactivegridpattern,2026-03-05
+LightRaysBackground,Backgrounds,web,God rays light beams flowing downward with configurable ray count speed and opacity,/components/lightraysbackground,2026-03-05
+NoiseMeshBackground,Backgrounds,web,Gradient mesh with subtle noise and grain texture effect using canvas,/components/noisemeshbackground,2026-03-05
+GlassAuroraBackground,Backgrounds,web,Glassmorphism with animated aurora gradient effect and backdrop blur,/components/glassaurorabackground,2026-03-05
+ButtonMobile,Mobile UI,mobile,Mobile button component from ui-mobile,/mobile/button,2026-03-07
+InputMobile,Mobile UI,mobile,Mobile input component from ui-mobile,/mobile/input,2026-03-07
+CheckboxMobile,Mobile UI,mobile,Mobile checkbox component from ui-mobile,/mobile/checkbox,2026-03-07
+RadioMobile,Mobile UI,mobile,Mobile radio group component from ui-mobile,/mobile/radio,2026-03-07
+ToggleSwitchMobile,Mobile UI,mobile,Mobile toggle switch component from ui-mobile,/mobile/toggle-switch,2026-03-07
+BadgeMobile,Mobile UI,mobile,Mobile badge component from ui-mobile,/mobile/badge,2026-03-07
+TabsMobile,Mobile UI,mobile,Mobile tabs component from ui-mobile,/mobile/tabs,2026-03-07
+AlertMobile,Mobile UI,mobile,Mobile alert component from ui-mobile,/mobile/alert,2026-03-07
+ProgressBarMobile,Mobile UI,mobile,Mobile progress bar component from ui-mobile,/mobile/progress-bar,2026-03-07
+SpinnerMobile,Mobile UI,mobile,Mobile spinner component from ui-mobile,/mobile/spinner,2026-03-07
+SelectMobile,Mobile UI,mobile,Mobile select component from ui-mobile,/mobile/select,2026-03-07
+TextareaMobile,Mobile UI,mobile,Mobile textarea component from ui-mobile,/mobile/textarea,2026-03-07
+AccordionMobile,Mobile UI,mobile,Mobile accordion component from ui-mobile,/mobile/accordion,2026-03-07
+CalloutMobile,Mobile UI,mobile,Mobile callout component from ui-mobile,/mobile/callout,2026-03-07
+StatusLabelMobile,Mobile UI,mobile,Mobile status label component from ui-mobile,/mobile/status-label,2026-03-07
+TagChipMobile,Mobile UI,mobile,Mobile tag chip component from ui-mobile,/mobile/tag-chip,2026-03-07
+TextMobile,Mobile Typography,mobile,Mobile text component from ui-mobile,/mobile/text,2026-03-07
+HeadingMobile,Mobile Typography,mobile,Mobile heading component from ui-mobile,/mobile/heading,2026-03-07
+AppShellMobile,Mobile Layout,mobile,Mobile app shell layout component from ui-mobile,/mobile/app-shell,2026-03-07
+ScreenMobile,Mobile Layout,mobile,Mobile screen layout wrapper from ui-mobile,/mobile/screen,2026-03-07
+CardMobile,Mobile Containers,mobile,Mobile card container component from ui-mobile,/mobile/card,2026-03-07

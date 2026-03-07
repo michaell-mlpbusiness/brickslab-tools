@@ -1,0 +1,23 @@
+node_modules
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Logs
+logs/
+*.log
+apps/brickslab_catalog/public/data/
+
+# Env files
+.env
+.env.local
+.env*.local
+
+# OS / Editor
+.DS_Store
+.vscode/
+
+# pnpm
+.pnpm-store/

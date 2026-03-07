@@ -1,0 +1,26 @@
+{
+  "name": "@brickslab./theme-default",
+  "version": "2.0.0",
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brickslab/brickslab-v1.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node -e \"const fs=require('fs');fs.mkdirSync('dist',{recursive:true});fs.copyFileSync('src/tokens.css','dist/tokens.css')\"",
+    "clean": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true})\"",
+    "lint": "echo \"skip\"",
+    "typecheck": "echo \"skip\""
+  },
+  "dependencies": {
+    "@brickslab./token-contract": "^2.0.0"
+  }
+}
