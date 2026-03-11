@@ -480,7 +480,7 @@ export default function TestsPage() {
               fontWeight: 600,
             }}
           >
-            ⚠ Source CSV hérité — relancez <code style={{ fontFamily: "monospace", background: "rgba(0,0,0,0.1)", padding: "1px 4px", borderRadius: 3 }}>pnpm audit</code> pour les données complètes
+            ⚠ Source CSV hérité — relancez <code style={{ fontFamily: "monospace", background: "rgba(0,0,0,0.1)", padding: "1px 4px", borderRadius: 3 }}>pnpm run audit</code> pour les données complètes
           </div>
         )}
         {dataSource === "none" && !isLoading && (
@@ -647,7 +647,7 @@ export default function TestsPage() {
               Aucun résultat d&apos;audit
             </p>
             <p style={{ fontSize: 13, margin: 0 }}>
-              Lancez <code style={{ background: "var(--c-border)", padding: "2px 6px", borderRadius: 3 }}>pnpm audit</code> depuis la racine du projet.
+              Lancez <code style={{ background: "var(--c-border)", padding: "2px 6px", borderRadius: 3 }}>pnpm run audit</code> depuis la racine du projet.
             </p>
           </div>
         ) : (

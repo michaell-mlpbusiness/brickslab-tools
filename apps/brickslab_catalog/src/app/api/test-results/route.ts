@@ -1,25 +1,28 @@
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// ── Chemins (process.cwd() = apps/brickslab_catalog en Next.js) ────────────
-const AUDIT_JSON_CANDIDATES = [
-  join(process.cwd(), "logs", "audit-results.json"),
-  join(process.cwd(), "../../logs/audit-results.json"),
-  join(process.cwd(), "public", "data", "audit-results.json"),
-];
-const AUDIT_CSV_CANDIDATES = [
-  join(process.cwd(), "logs", "audit-results.csv"),
-  join(process.cwd(), "../../logs/audit-results.csv"),
-  join(process.cwd(), "public", "data", "audit-results.csv"),
-];
-const LEGACY_CSV_CANDIDATES = [
-  join(process.cwd(), "logs", "components-test-log.csv"),
-  join(process.cwd(), "../../logs/components-test-log.csv"),
-  join(process.cwd(), "public", "data", "components-test-log.csv"),
-];
+// ── Chemins robustes (local + Vercel + monorepo) ──────────────────────────
+function buildCandidates(fileName: string): string[] {
+  const roots = [
+    join(process.cwd(), "public", "data"),
+    join(process.cwd(), "apps", "brickslab_catalog", "public", "data"),
+    join(process.cwd(), "../../apps/brickslab_catalog/public/data"),
+    join(process.cwd(), ".next", "standalone", "apps", "brickslab_catalog", "public", "data"),
+    join(process.cwd(), "logs"),
+    join(process.cwd(), "../logs"),
+    join(process.cwd(), "../../logs"),
+  ];
+
+  return [...new Set(roots.map((root) => join(root, fileName)))];
+}
+
+const AUDIT_JSON_CANDIDATES = buildCandidates("audit-results.json");
+const AUDIT_CSV_CANDIDATES = buildCandidates("audit-results.csv");
+const LEGACY_CSV_CANDIDATES = buildCandidates("components-test-log.csv");
 
 function resolveExistingPath(candidates: string[]): string | null {
   for (const filePath of candidates) {

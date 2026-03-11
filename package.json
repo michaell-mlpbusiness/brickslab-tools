@@ -4,8 +4,12 @@
   "packageManager": "pnpm@10.30.0",
   "scripts": {
     "dev": "pnpm sync:components && pnpm --filter brickslab_catalog dev",
-    "build": "pnpm run build:packages && pnpm sync:components && pnpm --filter brickslab_catalog build",
+    "build": "pnpm run build:packages && pnpm run audit:ci && pnpm sync:components && pnpm run export:audit-data && pnpm --filter brickslab_catalog build",
     "build:packages": "pnpm --filter @brickslab./token-contract build && pnpm --filter @brickslab./theme-default build && pnpm --filter @brickslab./ui-web build",
+    "audit": "node tests/audit/audit-runner.js",
+    "audit:verbose": "node tests/audit/audit-runner.js --verbose",
+    "audit:ci": "pnpm run audit || true",
+    "export:audit-data": "node scripts/export-audit-data.js",
     "start": "pnpm --filter brickslab_catalog start",
     "lint": "pnpm --filter brickslab_catalog lint",
     "sync:components": "node scripts/sync-components.js"
