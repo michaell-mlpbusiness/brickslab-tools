@@ -29,6 +29,7 @@ import {
   CodeBlock,
 } from "@brickslab./ui-web";
 import * as BrickslabUI from "@brickslab./ui-web";
+import uiWebPackage from "@brickslab./ui-web/package.json";
 import { componentsData, type ComponentData } from "../../../catalog/components.data";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
@@ -54,6 +55,7 @@ const HEADER_COMPACT_BREAKPOINT = 1440;
 const HISTORY_LIMIT = 100;
 const AUTOSAVE_STORAGE_KEY = "brickslab:mockupbuilder:v1";
 const ALIGN_SNAP_THRESHOLD = 6;
+const UI_WEB_VERSION_LABEL = `v${uiWebPackage.version}`;
 const COLOR_SWATCHES = [
   "#CC4A48",
   "#4ADE80",
@@ -1265,7 +1267,7 @@ const LAYOUT_PRESETS: LayoutPreset[] = [
       { componentName: "TagChip", props: { label: "Use cases", variant: "default" }, x: 434, y: 28, w: 88, h: 0, zIndex: 1 },
       { componentName: "TagChip", props: { label: "Composants", variant: "default" }, x: 536, y: 28, w: 108, h: 0, zIndex: 1 },
       { componentName: "TagChip", props: { label: "Pricing", variant: "default" }, x: 658, y: 28, w: 74, h: 0, zIndex: 1 },
-      { componentName: "StatusLabel", props: { label: "v2.1.1", status: "active" }, x: 928, y: 28, w: 102, h: 0, zIndex: 1 },
+      { componentName: "StatusLabel", props: { label: UI_WEB_VERSION_LABEL, status: "active" }, x: 928, y: 28, w: 102, h: 0, zIndex: 1 },
       { componentName: "Button", props: { children: "Connexion", variant: "ghost", size: "sm" }, x: 1080, y: 20, w: 150, h: 0, zIndex: 1 },
       { componentName: "Button", props: { children: "Essayer", variant: "primary", size: "sm" }, x: 1246, y: 20, w: 150, h: 0, zIndex: 1 },
       { componentName: "Alert", props: { title: "Annonce produit", children: "Nouvelle collection de layouts premium disponible dans le mockup builder.", variant: "info" }, x: 48, y: 108, w: 760, h: 0, zIndex: 1 },

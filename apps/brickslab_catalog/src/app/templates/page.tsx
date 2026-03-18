@@ -33,6 +33,13 @@ import {
   FiSearch, FiHeart, FiStar,
   FiCode, FiMonitor, FiSmartphone, FiDatabase, FiAward, FiGithub, FiExternalLink,
 } from "react-icons/fi";
+import uiWebPackage from "@brickslab./ui-web/package.json";
+import themeDefaultPackage from "@brickslab./theme-default/package.json";
+
+const UI_WEB_VERSION = uiWebPackage.version;
+const THEME_DEFAULT_VERSION = themeDefaultPackage.version;
+const UI_WEB_VERSION_LABEL = `v${UI_WEB_VERSION}`;
+const INSTALL_COMMAND = `npm install @brickslab./ui-web@${UI_WEB_VERSION} @brickslab./theme-default@${THEME_DEFAULT_VERSION} --legacy-peer-deps`;
 
 // ── ZIP generator (browser-native, no deps) ───────────────────────────────────
 
@@ -255,8 +262,8 @@ const PACKAGE_JSON = `{
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@brickslab./ui-web": "2.1.1",
-    "@brickslab./theme-default": "2.0.0",
+    "@brickslab./ui-web": "${UI_WEB_VERSION}",
+    "@brickslab./theme-default": "${THEME_DEFAULT_VERSION}",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -3205,7 +3212,7 @@ function DocumentationTemplate() {
           logo={<LogoMark size="sm" variant="full" />}
           actions={
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <Badge variant="default" size="sm">v2.1.1</Badge>
+              <Badge variant="default" size="sm">{UI_WEB_VERSION_LABEL}</Badge>
               <Button variant="secondary" size="sm">API Reference</Button>
             </div>
           }
@@ -3257,7 +3264,7 @@ export default function DocsHomePage() {
     <AppShell
       headerHeight={60}
       sidebarWidth={220}
-      header={<HeaderBar logo={<LogoMark size="sm" variant="full" />} actions={<div style={{ display: "flex", alignItems: "center", gap: 10 }}><Badge variant="default" size="sm">v2.1.1</Badge><Button variant="secondary" size="sm">API Reference</Button></div>} />}
+      header={<HeaderBar logo={<LogoMark size="sm" variant="full" />} actions={<div style={{ display: "flex", alignItems: "center", gap: 10 }}><Badge variant="default" size="sm">${UI_WEB_VERSION_LABEL}</Badge><Button variant="secondary" size="sm">API Reference</Button></div>} />}
       sidebar={<SidebarNav sections={DOCS_NAV} activePath="/docs" width={220} />}
     >
       <div style={{ padding: "28px 32px", maxWidth: 1000 }}>
@@ -3283,7 +3290,7 @@ export default function InstallationPage() {
         <TagChip label="Next.js" variant="muted" size="sm" />
       </div>
       <div style={{ background: "var(--c-surface)", border: "1px solid var(--c-border)", borderRadius: 12, padding: "14px 16px", fontFamily: "ui-monospace, monospace", fontSize: 13, color: "var(--color-fg)" }}>
-        npm install @brickslab./ui-web@2.1.1 @brickslab./theme-default@2.0.0 --legacy-peer-deps
+        ${INSTALL_COMMAND}
       </div>
       <div style={{ marginTop: 14 }}>
         <Button variant="secondary" size="sm">Voir la suite</Button>

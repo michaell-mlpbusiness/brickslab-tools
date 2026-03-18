@@ -13,7 +13,7 @@ declare global {
           "camera-controls"?: boolean;
           "auto-rotate"?: boolean | "";
           "shadow-intensity"?: number | string;
-          exposure?: number | string;
+          "exposure"?: number | string;
           "environment-image"?: string;
           [key: string]: any;
         };

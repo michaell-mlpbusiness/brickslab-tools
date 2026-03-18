@@ -16,28 +16,33 @@ const props: PropDef[] = [
     name: "texte",
     type: "string",
     required: true,
-    description: "Texte principal affiché dans la carte (via le composant Text interne).",
+    description:
+      "Texte principal affiché dans la carte (via le composant Text interne).",
   },
   {
     name: "cardtitle",
     type: "string",
-    description: "Titre optionnel de la carte. Si présent, affiché au-dessus de texte avec la variante body-lg et le ton brand.",
+    description:
+      "Titre optionnel de la carte. Si présent, affiché au-dessus de texte avec la variante body-lg et le ton brand.",
   },
   {
     name: "variant",
-    type: '"default" | "opaque" | "blurred"',
+    type: '"default" | "opaque" | "blurred" | "bgImg"', // mise a jour du type
     default: '"default"',
-    description: '"default" : pas de couche de fond. "opaque" : fond semi-transparent. "blurred" : fond flouté (effet glassmorphism).',
+    description:
+      '"default" : pas de couche de fond. "opaque" : fond semi-transparent. "blurred" : fond flouté (effet glassmorphism). "bgImg" : image de fond avec overlay au survol.',
   },
   {
     name: "opacity",
     type: "number",
-    description: "Override de l'opacité du fond. Défaut selon variant : 0.5 (opaque), 0.3 (blurred).",
+    description:
+      "Override de l'opacité du fond. Défaut selon variant : 0.5 (opaque), 0.3 (blurred).",
   },
   {
     name: "blurPx",
     type: "number",
-    description: "Override de l'intensité du flou en pixels. Défaut : 6 (blurred). Ignoré pour default et opaque.",
+    description:
+      "Override de l'intensité du flou en pixels. Défaut : 6 (blurred). Ignoré pour default et opaque.",
   },
   {
     name: "width",
@@ -48,6 +53,20 @@ const props: PropDef[] = [
     name: "height",
     type: "number",
     description: "Hauteur en pixels. Si omis, la carte s'adapte à son contenu.",
+  },
+  // ... width/height ...
+  {
+    name: "imageUrl",
+    type: "string",
+    description:
+      'URL de l\'image de fond. Requis pour variant="bgImg". Ignoré pour les autres variantes.',
+  },
+  {
+    name: "imageAlt",
+    type: "string",
+    default: '""',
+    description:
+      "Texte alternatif de l'image. Vide par défaut car l'image est décorative (le contenu sémantique est porté par aria-label sur la carte).",
   },
 ];
 
@@ -92,6 +111,26 @@ const usageCode = `import { TextCard } from "@brickslab./ui-web";
   variant="blurred"
   blurPx={14}
   width={280}
+/>
+
+// variant: bgImg (image de fond + overlay au survol)
+// Le titre et le texte apparaissent à l'hover ou au focus clavier
+<TextCard
+  cardtitle="Alpes Suisses"
+  texte="Découvrez nos randonnées en montagne"
+  variant="bgImg"
+  imageUrl="/images/mountain.jpg"
+  width={280}
+  height={200}
+/>
+
+// variant: bgImg sans titre
+<TextCard
+  texte="Une destination unique"
+  variant="bgImg"
+  imageUrl="/images/destination.jpg"
+  width={280}
+  height={200}
 />`;
 
 export default function TextCardPage() {
@@ -180,6 +219,31 @@ export default function TextCardPage() {
             opacity={0.1}
             blurPx={8}
             width={260}
+          />
+        </div>
+      </Preview>
+
+      <SubLabel>{`variant="bgImg" — image de fond, titre et texte au survol / focus`}</SubLabel>
+      <Preview>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <PropTag>avec cardtitle</PropTag>
+          <TextCard
+            cardtitle="Alpes Suisses"
+            texte="Découvrez nos randonnées en montagne"
+            variant="bgImg"
+            imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=560"
+            width={260}
+            height={200}
+          />
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <PropTag>sans cardtitle</PropTag>
+          <TextCard
+            texte="Une destination unique"
+            variant="bgImg"
+            imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=560"
+            width={260}
+            height={200}
           />
         </div>
       </Preview>

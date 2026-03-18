@@ -184,7 +184,7 @@ export default function AlertPage() {
 
       {/* ── Sans icône ──────────────────────────────────────────────── */}
       <SectionTitle>Sans icône</SectionTitle>
-      <SubLabel>icon=false — retire l'icône de la variante</SubLabel>
+      <SubLabel>icon=false — retire l&rsquo;icône de la variante</SubLabel>
       <Preview>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, width: "100%" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -200,7 +200,7 @@ export default function AlertPage() {
 
       {/* ── Full Width ──────────────────────────────────────────────── */}
       <SectionTitle>Full Width</SectionTitle>
-      <SubLabel>fullWidth=true — s'étend sur toute la largeur du conteneur</SubLabel>
+      <SubLabel>fullWidth=true — s&rsquo;étend sur toute la largeur du conteneur</SubLabel>
       <Preview>
         <Alert variant="error" fullWidth title="Erreur de chargement">
           Impossible de récupérer les données. Vérifiez votre connexion et réessayez.

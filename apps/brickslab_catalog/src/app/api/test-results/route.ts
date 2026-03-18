@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, statSync } from "fs";
 import { join } from "path";
 
 export const runtime = "nodejs";
@@ -25,10 +25,15 @@ const AUDIT_CSV_CANDIDATES = buildCandidates("audit-results.csv");
 const LEGACY_CSV_CANDIDATES = buildCandidates("components-test-log.csv");
 
 function resolveExistingPath(candidates: string[]): string | null {
-  for (const filePath of candidates) {
-    if (existsSync(filePath)) return filePath;
-  }
-  return null;
+  const existing = candidates
+    .filter((filePath) => existsSync(filePath))
+    .map((filePath) => ({
+      filePath,
+      mtimeMs: statSync(filePath).mtimeMs,
+    }))
+    .sort((left, right) => right.mtimeMs - left.mtimeMs);
+
+  return existing[0]?.filePath ?? null;
 }
 
 const NO_STORE_HEADERS = {

@@ -291,7 +291,7 @@ export default function InputPage() {
       </Preview>
 
       {/* ── Label + helper ──────────────────────────────────────────── */}
-      <SectionTitle>Label et texte d'aide</SectionTitle>
+      <SectionTitle>Label et texte d&rsquo;aide</SectionTitle>
       <SubLabel>label · helperText · required (astérisque)</SubLabel>
       <Preview>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 320 }}>
@@ -327,7 +327,7 @@ export default function InputPage() {
 
       {/* ── Full Width ───────────────────────────────────────────────── */}
       <SectionTitle>Pleine largeur</SectionTitle>
-      <SubLabel>fullWidth — s'étire à 100% du conteneur</SubLabel>
+      <SubLabel>fullWidth — s&rsquo;étire à 100% du conteneur</SubLabel>
       <Preview>
         <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 12 }}>
           <Input

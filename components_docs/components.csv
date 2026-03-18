@@ -1,4 +1,7 @@
 label,section,type,description,href,addedAt
+NewsLetter,Sections,web,NewsLetter section,/components/newsletter,2026-03-17,
+Testimonial,Cards,web,Card component for testimonials,/components/testimonials,2026-03-17
+StarRating,Cards,web,Read-only star rating display with support for half values and configurable icon size,/components/starrating,2026-03-18
 AppShell,Layout & Shell,web,Container component for page layout with header sidebar and footer,/components/appshell,
 HeaderBar,Layout & Shell,web,Top navigation and branding header component,/components/headerbar,
 FooterBar,Layout & Shell,web,Footer with links branding and social media,/components/footerbar,
@@ -14,6 +17,8 @@ MediaCarousel,Carousel,web,Carousel for displaying images and media with autopla
 Marquee,Animation,web,Infinite horizontal or vertical scroll with pause on hover and reverse direction,/components/marquee,2026-03-05
 AnimatedList,Animation,web,List with staggered sequential item animations and loop support,/components/animatedlist,2026-03-05
 AnimatedStack,Animation,web,Notification stack with card pile effect — new items pop from top with bounce and stack behind,/components/animatedstack,2026-03-06
+SignatureDetails,Animation,web,Signature grid with hover overlay reveal image zoom and configurable columns,/components/signaturedetails,2026-03-16
+NebulaViewer,Animation,web,3D viewer based on <model-viewer> with halo glow model switcher and rotation toggle,/components/nebulaviewer,2026-03-16
 Heading,Typography,web,Text heading component with multiple levels,/components/heading,
 Text,Typography,web,Body text and paragraph component,/components/text,
 TextBlock,Typography,web,Multi-line text content block,/components/textblock,

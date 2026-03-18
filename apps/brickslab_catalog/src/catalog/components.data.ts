@@ -11,6 +11,30 @@ export interface ComponentData {
 
 export const componentsData: ComponentData[] = [
   {
+    label: "NewsLetter",
+    href: "/components/newsletter",
+    section: "Sections",
+    type: "web" as const,
+    description: "NewsLetter section",
+    addedAt: "2026-03-17",
+  },
+  {
+    label: "Testimonial",
+    href: "/components/testimonials",
+    section: "Cards",
+    type: "web" as const,
+    description: "Card component for testimonials",
+    addedAt: "2026-03-17",
+  },
+  {
+    label: "StarRating",
+    href: "/components/starrating",
+    section: "Cards",
+    type: "web" as const,
+    description: "Read-only star rating display with support for half values and configurable icon size",
+    addedAt: "2026-03-18",
+  },
+  {
     label: "AppShell",
     href: "/components/appshell",
     section: "Layout & Shell",
@@ -118,6 +142,22 @@ export const componentsData: ComponentData[] = [
     type: "web" as const,
     description: "Notification stack with card pile effect — new items pop from top with bounce and stack behind",
     addedAt: "2026-03-06",
+  },
+  {
+    label: "SignatureDetails",
+    href: "/components/signaturedetails",
+    section: "Animation",
+    type: "web" as const,
+    description: "Signature grid with hover overlay reveal image zoom and configurable columns",
+    addedAt: "2026-03-16",
+  },
+  {
+    label: "NebulaViewer",
+    href: "/components/nebulaviewer",
+    section: "Animation",
+    type: "web" as const,
+    description: "3D viewer based on <model-viewer> with halo glow model switcher and rotation toggle",
+    addedAt: "2026-03-16",
   },
   {
     label: "Heading",

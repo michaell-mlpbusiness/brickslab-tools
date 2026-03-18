@@ -16,9 +16,9 @@ export * from "./components/carte/bento_card/BentoCard";
 export * from "./components/carte/bento_card/BentoCard.type";
 export * from "./components/carte/social_post_card/SocialPostCard";
 export * from "./components/carte/social_post_card/SocialPostCard.type";
-export * from "./components/carte/testimonials/Testimonials";
-export * from "./components/carte/testimonials/Testimonials.type";
-export * from "./components/carte/testimonials/start_rating/StarRating";
+export * from "./components/carte/testimonials/Testimonials"
+export * from "./components/carte/testimonials/Testimonials.type"
+export * from "./components/carte/testimonials/start_rating/StarRating"
 
 // ── Layout ────────────────────────────────────────────────────────────────────
 export * from "./components/layout/app_shell/AppShell";
@@ -62,6 +62,10 @@ export * from "./components/catalog/page_hero/PageHero.type";
 
 // ── Carrousel ─────────────────────────────────────────────────────────────────
 export * from "./components/carrousel/media_carousel/MediaCarousel";
+
+// ── Section ─────────────────────────────────────────────────────────────────
+export * from "./components/sections/newsletter/NewsLetter.type"
+export * from "./components/sections/newsletter/NewsLetter"
 
 // ── Animation ─────────────────────────────────────────────────────────────────
 export * from "./components/animation/marquee/Marquee";
@@ -128,10 +132,8 @@ export * from "./components/footer/brand_slogan/BrandSlogan";
 export * from "./components/footer/brand_slogan/BrandSlogan.type";
 
 // ── Sections ──────────────────────────────────────────────────────────────────
-export * from "./components/sections/hero_cta_section/HeroCtaSection";
 export * from "./components/sections/hero_cta_section/HeroCtaSection.type";
-export * from "./components/sections/newsletter/NewsLetter";
-export * from "./components/sections/newsletter/NewsLetter.type";
+export * from "./components/sections/hero_cta_section/HeroCtaSection";
 export * from "./components/sections/feature_list_section/FeatureListSection";
 export * from "./components/sections/section_header/SectionHeader";
 export * from "./components/sections/carousel_with_text_section/CarouselWithTextSection";

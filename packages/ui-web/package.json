@@ -1,6 +1,6 @@
 {
   "name": "@brickslab./ui-web",
-  "version": "2.1.1",
+  "version": "2.1.4",
   "private": false,
   "type": "module",
   "main": "./dist/index.cjs",

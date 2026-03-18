@@ -50,7 +50,7 @@ export default function ShimmerBorderTextPage() {
         <ShimmerBorderText
           fillMode="solid"
           strokeColor="var(--color-fg)"
-          shimmerColor="rgba(255,255,255,0.6)"
+          shimmerColor="color-mix(in srgb, var(--color-bg) 60%, transparent)"
           speed={1.5}
           style={{ fontSize: 36, fontWeight: 700 }}
         >
