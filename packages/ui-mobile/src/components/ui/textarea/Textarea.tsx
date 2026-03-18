@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   label: {
     marginBottom: tokens.space1,
     fontSize: tokens.fontsizeSm,
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
     color: tokens.colorFg,
   },
   input: {

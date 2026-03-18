@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, TouchableOpacity, Text, View, StyleSheet, ViewStyle } from 'react-native';
+import { ScrollView, TouchableOpacity, Text, View, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { TabsProps, TabPanelProps, TabsVariant, TabsSize } from './Tabs.type';
 import { tokens } from '@/tokens';
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginRight: 2,
   },
   label: {
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
   },
   disabled: {
     opacity: 0.4,

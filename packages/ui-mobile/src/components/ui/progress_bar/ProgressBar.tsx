@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Text, Animated, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, Animated, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { ProgressBarProps, ProgressBarColorScheme, ProgressBarSize } from './ProgressBar.type';
 import { tokens } from '@/tokens';
 
@@ -96,18 +96,18 @@ const styles = StyleSheet.create({
   label: {
     fontSize: tokens.fontsizeXs,
     color: tokens.colorMuted,
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
   },
   value: {
     fontSize: tokens.fontsizeXs,
     color: tokens.colorMuted,
-    fontWeight: '600',
+    fontWeight: '600' as TextStyle['fontWeight'],
     fontVariant: ['tabular-nums'],
   },
   track: {
     width: '100%',
     borderRadius: tokens.radiusFull,
-    overflow: 'hidden',
+    overflow: 'hidden' as ViewStyle['overflow'],
   },
   bar: {
     borderRadius: tokens.radiusFull,

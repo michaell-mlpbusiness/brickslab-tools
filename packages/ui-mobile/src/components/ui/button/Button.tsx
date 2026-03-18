@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, ActivityIndicator, ViewStyle } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View, ActivityIndicator, ViewStyle, TextStyle } from 'react-native';
 import { ButtonProps, ButtonVariant, ButtonSize } from './Button.type';
 import { tokens } from '@/tokens';
 
@@ -33,8 +33,8 @@ const sizeStyles = (size: ButtonSize): ViewStyle => {
   }
 };
 
-const textStyles = (variant: ButtonVariant, size: ButtonSize, customColor?: string): ViewStyle => {
-  const base: ViewStyle = { fontWeight: '600' as any };
+const textStyles = (variant: ButtonVariant, size: ButtonSize, customColor?: string): TextStyle => {
+  const base: TextStyle = { fontWeight: '600' as TextStyle['fontWeight'] };
   switch (size) {
     case 'sm':
       base.fontSize = tokens.fontsizeXs;

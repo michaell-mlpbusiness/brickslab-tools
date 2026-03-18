@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { View, TextInput, Text, StyleSheet, ViewStyle, TextStyle, StyleProp } from 'react-native';
 import { InputProps, InputSize } from './Input.type';
 import { tokens } from '@/tokens';
 
@@ -37,20 +37,20 @@ export function Input({
   const isEditable = editable && !disabled;
   const config = sizeStyles(size);
 
-  const containerStyle: ViewStyle = [
+  const containerStyle: StyleProp<ViewStyle> = [
     styles.container,
     fullWidth && { width: '100%' },
     !isEditable && { opacity: 0.5 },
     userStyle,
   ];
 
-  const inputContainerStyle: ViewStyle = [
+  const inputContainerStyle: StyleProp<ViewStyle> = [
     styles.inputContainer,
     { borderColor: hasError ? tokens.colorError : tokens.colorMuted },
     !isEditable && { backgroundColor: tokens.colorMuted },
   ];
 
-  const textInputStyle: TextStyle = [
+  const textInputStyle: StyleProp<TextStyle> = [
     styles.input,
     config,
     { color: tokens.colorFg },
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   label: {
     marginBottom: tokens.space1,
     fontSize: tokens.fontsizeSm,
-    fontWeight: tokens.fontweightMedium,
+    fontWeight: tokens.fontweightMedium as TextStyle['fontWeight'],
     color: tokens.colorFg,
   },
   inputContainer: {

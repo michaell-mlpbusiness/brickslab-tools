@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, ViewStyle } from 'react-native';
-import { CalloutProps, CalloutVariant } from './Callout.type';
+import { View, Text, StyleSheet, TextStyle } from 'react-native';
+import { CalloutProps } from './Callout.type';
 import { tokens } from '@/tokens';
 
 const variantMap = {
@@ -42,15 +42,16 @@ export function Callout({
 }: CalloutProps) {
   const config = variantMap[variant];
   const displayTitle = title ?? config.defaultTitle;
+  const hasChildren = children !== undefined && children !== null;
 
   return (
     <View style={[styles.callout, { backgroundColor: config.bg, borderColor: config.border }, userStyle]}>
       <Text style={styles.icon}>{config.icon}</Text>
       <View style={styles.content}>
-        <Text style={[styles.title, { color: config.accent }]}>
+        <Text style={[styles.title, { color: config.accent, marginBottom: hasChildren ? tokens.space1 : 0 }]}>
           {displayTitle}
         </Text>
-        {children && (
+        {hasChildren && (
           <Text style={styles.body}>
             {children}
           </Text>
@@ -79,8 +80,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: tokens.fontsizeSm,
-    fontWeight: '600',
-    marginBottom: children ? tokens.space1 : 0,
+    fontWeight: '600' as TextStyle['fontWeight'],
+    marginBottom: 0,
   },
   body: {
     fontSize: tokens.fontsizeSm,

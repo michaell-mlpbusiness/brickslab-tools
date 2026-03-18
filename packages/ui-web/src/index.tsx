@@ -1,5 +1,7 @@
 "use client";
 
+import "./model-viewer";
+
 // ── Typographie ───────────────────────────────────────────────────────────────
 export * from "./components/typographie/heading/Heading";
 export * from "./components/typographie/text/Text";

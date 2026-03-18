@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, StyleSheet, TextStyle } from 'react-native';
 import { StatusLabelProps, StatusVariant } from './StatusLabel.type';
 import { tokens } from '@/tokens';
 
@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 13,
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
   },
 });

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, TouchableOpacity, Text, Animated, StyleSheet, ViewStyle } from 'react-native';
+import { View, TouchableOpacity, Text, Animated, StyleSheet, ViewStyle, TextStyle, StyleProp } from 'react-native';
 import { AccordionProps, AccordionItemProps, AccordionVariant, AccordionSize } from './Accordion.type';
 import { tokens } from '@/tokens';
 
@@ -9,18 +9,30 @@ const sizeMap = {
   lg: { paddingVertical: 16, paddingHorizontal: 20, fontSize: tokens.fontsizeMedium },
 };
 
-const getVariantStyles = (variant: AccordionVariant) => {
+const getVariantStyles = (
+  variant: AccordionVariant
+): { container: ViewStyle; item: ViewStyle; separator: ViewStyle } => {
   switch (variant) {
     case 'bordered':
       return {
-        container: { borderWidth: 1, borderColor: tokens.cBorder, borderRadius: tokens.radiusMd, overflow: 'hidden' },
+        container: {
+          borderWidth: 1,
+          borderColor: tokens.cBorder,
+          borderRadius: tokens.radiusMd,
+          overflow: 'hidden' as ViewStyle['overflow'],
+        },
         item: {},
         separator: { borderTopWidth: 1, borderTopColor: tokens.cBorder },
       };
     case 'separated':
       return {
         container: { gap: 8 },
-        item: { borderWidth: 1, borderColor: tokens.cBorder, borderRadius: tokens.radiusMd, overflow: 'hidden' },
+        item: {
+          borderWidth: 1,
+          borderColor: tokens.cBorder,
+          borderRadius: tokens.radiusMd,
+          overflow: 'hidden' as ViewStyle['overflow'],
+        },
         separator: {},
       };
     case 'ghost':
@@ -30,7 +42,11 @@ const getVariantStyles = (variant: AccordionVariant) => {
         separator: { borderTopWidth: 1, borderTopColor: tokens.cBorder },
       };
     default:
-      return {};
+      return {
+        container: {},
+        item: {},
+        separator: {},
+      };
   }
 };
 
@@ -41,12 +57,13 @@ export function Accordion({
   style: userStyle,
 }: AccordionProps) {
   const variantStyles = getVariantStyles(variant);
+  const containerStyle: StyleProp<ViewStyle> = [variantStyles.container, userStyle];
 
   return (
-    <View style={[variantStyles.container, userStyle]}>
+    <View style={containerStyle}>
       {React.Children.map(children, (child, index) => (
-        <View key={index}>
-          {index > 0 && variantStyles.separator}
+        <View key={index} style={variantStyles.item}>
+          {index > 0 && <View style={variantStyles.separator} />}
           {child}
         </View>
       ))}
@@ -138,7 +155,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: tokens.fontsizeSm,
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
     color: tokens.colorFg,
     flex: 1,
   },

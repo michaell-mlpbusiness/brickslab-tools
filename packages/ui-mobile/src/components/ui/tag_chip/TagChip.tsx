@@ -4,7 +4,7 @@ import { TagChipProps } from './TagChip.type';
 import { tokens } from '@/tokens';
 
 const variantStyles = {
-  default: { color: tokens.colorFg, backgroundColor: tokens.cSurface },
+  default: { color: tokens.colorFg, backgroundColor: tokens.cSurfaceElevated },
   brand: { color: tokens.colorBrand, backgroundColor: tokens.cBrandSubtle },
   muted: { color: tokens.colorMuted, backgroundColor: 'transparent' },
 };
@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   label: {
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
   },
 });

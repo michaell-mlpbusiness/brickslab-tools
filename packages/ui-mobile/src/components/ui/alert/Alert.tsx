@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextStyle } from 'react-native';
 import { AlertProps, AlertVariant } from './Alert.type';
 import { tokens } from '@/tokens';
 
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontWeight: '600',
+    fontWeight: '600' as TextStyle['fontWeight'],
     fontSize: tokens.fontsizeSm,
     color: tokens.colorFg,
     marginBottom: 4,

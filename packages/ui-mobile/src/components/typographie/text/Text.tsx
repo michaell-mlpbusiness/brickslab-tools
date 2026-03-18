@@ -1,24 +1,24 @@
 import React from 'react';
-import { Text as RNText, StyleSheet, TextStyle } from 'react-native';
+import { Text as RNText, TextStyle } from 'react-native';
 import { TextProps } from './Text.type';
 import { tokens } from '@/tokens';
 
-const textConfig = {
+const textConfig: Record<NonNullable<TextProps['variant']>, TextStyle> = {
   'body-sm': {
     fontSize: tokens.fontsizeMedium,
-    fontWeight: tokens.fontweightMedium,
+    fontWeight: tokens.fontweightMedium as TextStyle['fontWeight'],
   },
   'body-md': {
     fontSize: tokens.fontsizeXl,
-    fontWeight: tokens.fontweightMedium,
+    fontWeight: tokens.fontweightMedium as TextStyle['fontWeight'],
   },
   'body-lg': {
     fontSize: tokens.fontsize2xl,
-    fontWeight: tokens.fontweightMedium,
+    fontWeight: tokens.fontweightMedium as TextStyle['fontWeight'],
   },
   caption: {
     fontSize: tokens.fontsizeXs,
-    fontWeight: tokens.fontweightLight,
+    fontWeight: tokens.fontweightLight as TextStyle['fontWeight'],
   },
 };
 

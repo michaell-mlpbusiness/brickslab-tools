@@ -2,11 +2,17 @@ import React from 'react';
 import { View, ViewStyle } from 'react-native';
 import { tokens } from '@/tokens';
 
+const paddingMap = {
+  sm: tokens.space3,
+  md: tokens.space4,
+  lg: tokens.space5,
+} as const;
+
 export interface CardProps {
   children?: React.ReactNode;
   style?: ViewStyle;
   variant?: 'default' | 'elevated' | 'outlined';
-  padding?: keyof typeof tokens.space;
+  padding?: keyof typeof paddingMap;
 }
 
 export function Card({
@@ -16,9 +22,9 @@ export function Card({
   padding = 'md',
 }: CardProps) {
   const cardStyle: ViewStyle = {
-    backgroundColor: tokens.colors.surface,
-    borderRadius: tokens.radius.md,
-    padding: tokens.space[padding],
+    backgroundColor: tokens.colorBg,
+    borderRadius: tokens.radiusMd,
+    padding: paddingMap[padding],
     ...getVariantStyle(variant),
     ...style,
   };
@@ -39,7 +45,7 @@ function getVariantStyle(variant: CardProps['variant']): ViewStyle {
     case 'outlined':
       return {
         borderWidth: 1,
-        borderColor: tokens.colors.border,
+        borderColor: tokens.cBorder,
       };
     default:
       return {};

@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   text: {
-    fontWeight: '600',
+    fontWeight: '600' as TextStyle['fontWeight'],
     textAlign: 'center',
   },
   dot: {

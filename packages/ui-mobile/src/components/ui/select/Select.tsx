@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, FlatList, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, FlatList, StyleSheet, TextStyle } from 'react-native';
 import { SelectProps, SelectSize, SelectOption } from './Select.type';
 import { tokens } from '@/tokens';
 
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   label: {
     marginBottom: tokens.space1,
     fontSize: tokens.fontsizeSm,
-    fontWeight: '500',
+    fontWeight: '500' as TextStyle['fontWeight'],
     color: tokens.colorFg,
   },
   select: {
@@ -175,6 +175,6 @@ const styles = StyleSheet.create({
   closeText: {
     fontSize: tokens.fontsizeSm,
     color: tokens.colorBrand,
-    fontWeight: '600',
+    fontWeight: '600' as TextStyle['fontWeight'],
   },
 });

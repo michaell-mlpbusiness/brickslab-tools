@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, ViewStyle } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, TextStyle } from 'react-native';
 import { CheckboxProps, CheckboxSize } from './Checkbox.type';
 import { tokens } from '@/tokens';
 
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   checkmark: {
     color: '#FBFBFB',
     fontSize: 10,
-    fontWeight: 'bold',
+    fontWeight: 'bold' as TextStyle['fontWeight'],
   },
   label: {
     fontSize: tokens.fontsizeSm,
