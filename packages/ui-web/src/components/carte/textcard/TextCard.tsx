@@ -10,9 +10,55 @@ export function TextCard({
   blurPx,
   width,
   height,
+  imageUrl,
+  imageAlt = "",
 }: TextCardProps) {
 
-  // Valeurs finales calculées selon variant
+  // --- Variante bgImg ---
+  if (variant === "bgImg") {
+    return (
+      /*
+       * article : semantique de contenu autonome
+       * tabIndex={0} : rend la carte focusable au clavier -> declenche :focus-within
+       * aria-label : expose le contenu textuel aux lecteurs d'ecran
+       *              (le contenu visuel etant cache par defaut)
+       */
+      <article
+        className="cardBgImg"
+        style={{ width, height }}
+        tabIndex={0}
+        aria-label={[cardtitle, texte].filter(Boolean).join(" - ")}
+      >
+        {imageUrl && (
+          /*
+           * alt="" : image decorative, le sens est porte par aria-label
+           * aria-hidden="true" : evite la double lecture par les AT
+           */
+          <img
+            src={imageUrl}
+            alt={imageAlt}
+            aria-hidden="true"
+            className="bgImage"
+          />
+        )}
+
+        {/*
+         * aria-hidden="true" : le contenu est deja expose via aria-label sur l'article
+         * Evite la double lecture (aria-label + contenu DOM)
+         */}
+        <div className="overlay" aria-hidden="true">
+          <div className="overlayContent">
+            {cardtitle && (
+              <Text texte={cardtitle} variant="body-md" align="center" tone="default" />
+            )}
+            <Text texte={texte} variant="body-sm" align="center" tone="muted" />
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  // --- Variantes existantes inchangees (default, opaque, blurred) ---
   let bgOpacity = 0;
   let bgBlur = 0;
 
@@ -20,12 +66,10 @@ export function TextCard({
     case "opaque":
       bgOpacity = opacity ?? 0.5;
       break;
-
     case "blurred":
-      bgOpacity = opacity ?? 0.3; // léger fond sinon le blur ne se voit pas
+      bgOpacity = opacity ?? 0.3;
       bgBlur = blurPx ?? 6;
       break;
-
     default:
       bgOpacity = 0;
       bgBlur = 0;
@@ -43,7 +87,6 @@ export function TextCard({
       }}
       className="card-hover"
     >
-      {/* Background layer uniquement si nécessaire */}
       {(bgOpacity > 0 || bgBlur > 0) && (
         <div
           style={{
@@ -58,16 +101,14 @@ export function TextCard({
           }}
         />
       )}
-
-      {/* Content layer */}
       <div style={{ position: "relative", zIndex: 1 }}>
         {cardtitle ? (
           <>
-            <Text texte={cardtitle} variant="body-lg" align="center" tone="brand"/>
-            <Text texte={texte} variant="body-md" align="center" tone="muted"/>
+            <Text texte={cardtitle} variant="body-md" align="center" tone="default" />
+            <Text texte={texte} variant="body-sm" align="center" tone="muted" />
           </>
         ) : (
-            <Text texte={texte} variant="body-md" align="center" tone="muted"/>
+          <Text texte={texte} variant="body-sm" align="center" tone="muted" />
         )}
       </div>
     </div>

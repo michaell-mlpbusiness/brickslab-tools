@@ -1,22 +1,21 @@
 import React from "react";
 import { FooterLinksProps } from "./FooterLinks.type";
-
 export function FooterLinks({ title, links }: FooterLinksProps) {
   return (
     <div>
       {title && (
         <div
           style={{
-            fontWeight: 600,
-            fontSize: 13,
+            fontWeight: "var(--fontweight-semibold)",
+            fontSize: "var(--fontsize-exs)",
             color: "var(--color-fg)",
-            marginBottom: 12,
+            marginBottom: "var(--margin-md)",
           }}
         >
           {title}
         </div>
       )}
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "var(--display-flex)", flexDirection: "column" }}>
         {links.map((link) => (
           <a
             key={link.href}
@@ -25,8 +24,8 @@ export function FooterLinks({ title, links }: FooterLinksProps) {
               display: "block",
               color: "var(--color-muted)",
               textDecoration: "none",
-              fontSize: 13,
-              padding: "3px 0",
+              fontSize: "var(--fontsize-exs)",
+              padding: "var(--space-1) 0",
             }}
           >
             {link.label}

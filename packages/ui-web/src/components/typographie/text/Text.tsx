@@ -11,17 +11,17 @@ const text_config: Record<
 > = {
   "body-sm": {
     tag: "p",
-    size: "var(--fontsize-medium)",
+    size: "var(--fontsize-exs)",
     weight: "var(--fontweight-medium)",
   },
   "body-md": {
     tag: "p",
-    size: "var(--fontsize-xl)",
+    size: "var(--fontsize-medium)",
     weight: "var(--fontweight-medium)",
   },
   "body-lg": {
     tag: "p",
-    size: "var(--fontsize-2xl)",
+    size: "var(--fontsize-lg)",
     weight: "var(--fontweight-medium)",
   },
   caption: {

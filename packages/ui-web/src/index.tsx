@@ -3,6 +3,7 @@
 // ── Typographie ───────────────────────────────────────────────────────────────
 export * from "./components/typographie/heading/Heading";
 export * from "./components/typographie/text/Text";
+export * from "./components/typographie/text/Text.type";
 export * from "./components/typographie/text_block/TextBlock";
 
 // ── Carte ─────────────────────────────────────────────────────────────────────
@@ -13,6 +14,9 @@ export * from "./components/carte/bento_card/BentoCard";
 export * from "./components/carte/bento_card/BentoCard.type";
 export * from "./components/carte/social_post_card/SocialPostCard";
 export * from "./components/carte/social_post_card/SocialPostCard.type";
+export * from "./components/carte/testimonials/Testimonials";
+export * from "./components/carte/testimonials/Testimonials.type";
+export * from "./components/carte/testimonials/start_rating/StarRating";
 
 // ── Layout ────────────────────────────────────────────────────────────────────
 export * from "./components/layout/app_shell/AppShell";
@@ -25,6 +29,7 @@ export * from "./components/layout/topbar/Topbar.type";
 export * from "./components/layout/burger_menu/BurgerMenu";
 export * from "./components/layout/burger_menu/BurgerMenu.type";
 export * from "./components/layout/top_nav/TopNav";
+export * from "./components/layout/top_nav/TopNav.type";
 export * from "./components/layout/footer_bar/FooterBar";
 export * from "./components/layout/bento_grid/BentoGrid";
 export * from "./components/layout/bento_grid/BentoGrid.type";
@@ -63,6 +68,10 @@ export * from "./components/animation/animated_list/AnimatedList";
 export * from "./components/animation/animated_list/AnimatedList.type";
 export * from "./components/animation/animated_stack/AnimatedStack";
 export * from "./components/animation/animated_stack/AnimatedStack.type";
+export * from "./components/animation/SignatureDetails/SignatureDetails";
+export * from "./components/animation/SignatureDetails/SignatureDetails.type";
+export * from "./components/animation/NebulaViewer/NebulaViewer";
+export * from "./components/animation/NebulaViewer/NebulaViewer.type";
 
 // ── Content ───────────────────────────────────────────────────────────────────
 export * from "./components/content/project_description_panel/ProjectDescriptionPanel";
@@ -106,13 +115,21 @@ export * from "./components/ui/theme_toggler/ThemeToggler.type";
 
 // ── Footer ────────────────────────────────────────────────────────────────────
 export * from "./components/footer/footer_links/FooterLinks";
+export * from "./components/footer/footer_links/FooterLinks.type";
 export * from "./components/footer/social_links/SocialLinks";
+export * from "./components/footer/social_links/SocialLinks.type";
 export * from "./components/footer/footer_contact/FooterContact";
+export * from "./components/footer/footer_contact/FooterContact.type";
 export * from "./components/footer/footer_legal/FooterLegal";
+export * from "./components/footer/footer_legal/FooterLegal.type";
 export * from "./components/footer/brand_slogan/BrandSlogan";
+export * from "./components/footer/brand_slogan/BrandSlogan.type";
 
 // ── Sections ──────────────────────────────────────────────────────────────────
 export * from "./components/sections/hero_cta_section/HeroCtaSection";
+export * from "./components/sections/hero_cta_section/HeroCtaSection.type";
+export * from "./components/sections/newsletter/NewsLetter";
+export * from "./components/sections/newsletter/NewsLetter.type";
 export * from "./components/sections/feature_list_section/FeatureListSection";
 export * from "./components/sections/section_header/SectionHeader";
 export * from "./components/sections/carousel_with_text_section/CarouselWithTextSection";

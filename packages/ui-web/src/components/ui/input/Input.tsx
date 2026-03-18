@@ -36,6 +36,7 @@ export function Input({
   required = false,
   autoFocus = false,
   maxLength,
+  anyError: hasErrorProp = false,
 }: InputProps) {
   const autoId = React.useId();
   const inputId = id ?? autoId;
@@ -45,9 +46,8 @@ export function Input({
   const paddingLeft = leftIcon ? `calc(${paddingH} + ${iconOffset})` : paddingH;
   const paddingRight = rightIcon ? `calc(${paddingH} + ${iconOffset})` : paddingH;
 
-  const hasError = Boolean(errorText);
   const isDisabled = disabled;
-
+  const hasError = Boolean(errorText) || hasErrorProp;
   const iconStyle: React.CSSProperties = {
     position: "absolute",
     top: "50%",
@@ -122,7 +122,7 @@ export function Input({
               paddingBottom: 0,
               fontSize,
               color: "var(--color-fg)",
-              backgroundColor: "var(--c-surface)",
+              backgroundColor: hasError ? "var(--color-error-bg, #cc4a481d)" : "var(--c-surface)",
               border: `1px solid ${hasError ? "var(--color-error)" : "var(--c-border)"}`,
               borderRadius: "var(--radius-sm)",
               transition: "var(--transition-all)",

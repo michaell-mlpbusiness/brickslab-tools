@@ -8,18 +8,18 @@ export function FooterContact({
   title = "Contact",
 }: FooterContactProps) {
   return (
-    <div style={{ fontSize: 13, color: "var(--color-muted)" }}>
+    <div style={{ fontSize: "var(--fontsize-exs)", color: "var(--color-muted)" }}>
       <div
         style={{
-          fontWeight: 600,
-          fontSize: 13,
+          fontWeight: "var(--fontweight-semibold)",
+          fontSize: "var(--fontsize-sm)",
           color: "var(--color-fg)",
-          marginBottom: 8,
+          marginBottom: "var(--margin-md)",
         }}
       >
         {title}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+      <div style={{ display: "var(--display-flex)", flexDirection: "column", gap: 4 }}>
         {email && (
           <a
             href={`mailto:${email}`}

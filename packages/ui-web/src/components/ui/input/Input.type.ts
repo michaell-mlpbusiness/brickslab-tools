@@ -10,6 +10,7 @@ export interface InputProps {
   placeholder?: string;
   helperText?: string;
   errorText?: string;
+  anyError?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
   leftIcon?: React.ReactNode;

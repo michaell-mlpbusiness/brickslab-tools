@@ -1,0 +1,255 @@
+.brick-header {
+
+position: sticky;
+top:0;
+
+background:var(--brick-header-bg,#fff);
+
+border-bottom:1px solid #e5e7eb;
+
+z-index:100;
+
+font-family:system-ui;
+
+}
+
+
+/* container */
+
+.brick-header-container{
+
+max-width:1280px;
+
+margin:0 auto;
+
+padding:12px 24px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+
+/* left zone */
+
+.brick-header-left{
+
+display:flex;
+
+align-items:center;
+
+gap:32px;
+
+}
+
+
+/* logo */
+
+.brick-header-logo{
+
+font-weight:700;
+
+font-size:18px;
+
+text-decoration:none;
+
+color:#111;
+
+}
+
+
+/* nav */
+
+.brick-header-nav ul{
+
+display:flex;
+
+gap:20px;
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+
+/* nav links */
+
+.brick-header-nav a{
+
+text-decoration:none;
+
+font-size:14px;
+
+font-weight:500;
+
+color:#374151;
+
+transition:.2s;
+
+}
+
+.brick-header-nav a:hover{
+
+color:#111;
+
+}
+
+
+/* actions */
+
+.brick-header-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+/* burger */
+
+.brick-header-burger{
+
+display:none;
+
+flex-direction:column;
+
+gap:4px;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+padding:6px;
+
+}
+
+.brick-header-burger span{
+
+width:22px;
+
+height:2px;
+
+background:#111;
+
+display:block;
+
+}
+
+
+/* overlay */
+
+.brick-header-overlay{
+
+display:none;
+
+}
+
+
+/* mobile panel */
+
+.brick-header-mobile{
+
+display:none;
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width:768px){
+
+.brick-header-nav{
+
+display:none;
+
+}
+
+.brick-header-actions{
+
+display:none;
+
+}
+
+.brick-header-burger{
+
+display:flex;
+
+}
+
+
+.brick-header-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.4);
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.3s;
+
+display:block;
+
+}
+
+
+.brick-header-mobile{
+
+position:fixed;
+
+top:0;
+
+right:-300px;
+
+width:300px;
+
+height:100%;
+
+background:white;
+
+padding:24px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+transition:.35s;
+
+}
+
+
+/* open state */
+
+.brick-header[data-open="true"] .brick-header-overlay{
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+.brick-header[data-open="true"] .brick-header-mobile{
+
+right:0;
+
+}
+
+}

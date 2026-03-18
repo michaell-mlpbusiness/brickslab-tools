@@ -1,6 +1,5 @@
-import React from "react";
 import { BrandSloganProps } from "./BrandSlogan.type";
-
+import React from "react";
 export function BrandSlogan({
   slogan = "Build faster. Ship smarter.",
   company = "BricksLab",
@@ -17,8 +16,8 @@ export function BrandSlogan({
       <span
         style={{
           color: "var(--color-brand)",
-          fontWeight: 700,
-          fontSize: "1em",
+          fontWeight: "var(--fontweight-light)",
+          fontSize: "var(--fontsize-medium)",
         }}
       >
         {company}
@@ -26,7 +25,7 @@ export function BrandSlogan({
       <span
         style={{
           color: "var(--color-muted)",
-          fontSize: "0.85em",
+          fontSize: "var(--fontsize-sm)",
         }}
       >
         {slogan}
