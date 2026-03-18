@@ -3,6 +3,9 @@ import Script from "next/script";
 import "./globals.css";
 import { CatalogShell } from "../catalog/CatalogShell";
 import { FooterBar } from "../catalog/FooterBar";
+import { GoogleAnalytics } from "../catalog/GoogleAnalytics";
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
 
 export const metadata: Metadata = {
   title: "Brickslab.Tools",
@@ -38,6 +41,7 @@ export default function RootLayout({
         ` }} />
       </head>
       <body style={{ margin: 0, padding: 0, display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        {gaMeasurementId ? <GoogleAnalytics measurementId={gaMeasurementId} /> : null}
         <CatalogShell />
         <main className="catalog-main">
           {children}
