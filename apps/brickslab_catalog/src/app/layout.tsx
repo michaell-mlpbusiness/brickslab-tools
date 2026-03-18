@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { CatalogShell } from "../catalog/CatalogShell";
 import { FooterBar } from "../catalog/FooterBar";
@@ -15,6 +16,11 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <Script
+          type="module"
+          src="https://unpkg.com/@google/model-viewer@4.2.0/dist/model-viewer.min.js"
+          strategy="beforeInteractive"
+        />
         {/* apply theme class before React hydrates to avoid flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
