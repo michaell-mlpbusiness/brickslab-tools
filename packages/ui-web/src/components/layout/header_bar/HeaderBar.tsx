@@ -3,7 +3,11 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export type HeaderBarProps = {
   logo?: string | React.ReactNode;
+  logoHeight?: number | string;
+  logoAlt?: string;
   title?: string;
+  titleSize?: number | string;
+  titleMobileSize?: number | string;
   navigation?: React.ReactNode;
   actions?: React.ReactNode;
 
@@ -21,6 +25,12 @@ export type HeaderBarProps = {
 
 function cx(...parts: Array<string | undefined | null | false>) {
   return parts.filter(Boolean).join(" ");
+}
+
+function toCssLength(value?: number | string) {
+  if (value === undefined || value === null) return undefined;
+  if (typeof value === "number") return `${value}px`;
+  return value;
 }
 
 function unwrapMobileStack(node: React.ReactNode): React.ReactNode {
@@ -75,7 +85,11 @@ const MIX_BRAND_18 = "color-mix(in srgb, var(--color-brand) 18%, transparent)";
 
 export function HeaderBar({
   logo,
+  logoHeight,
+  logoAlt,
   title,
+  titleSize,
+  titleMobileSize,
   navigation,
   actions,
   navPosition = "left",
@@ -136,6 +150,10 @@ export function HeaderBar({
       ? defaultFallbackBg
       : backgroundColor ?? (blur ? defaultFallbackBg : resolvedBg);
 
+  const resolvedLogoHeight = toCssLength(logoHeight);
+  const resolvedTitleSize = toCssLength(titleSize);
+  const resolvedTitleMobileSize = toCssLength(titleMobileSize);
+
   const rootStyle = {
     width: "100%",
     boxSizing: "border-box",
@@ -149,6 +167,9 @@ export function HeaderBar({
       : null),
     ["--brick-hb-bg" as never]: resolvedBg,
     ["--brick-hb-bg-fallback" as never]: resolvedFallbackBg,
+    ["--brick-hb-logo-height" as never]: resolvedLogoHeight,
+    ["--brick-hb-title-size" as never]: resolvedTitleSize,
+    ["--brick-hb-title-size-mobile" as never]: resolvedTitleMobileSize,
     ...style
   } satisfies React.CSSProperties;
 
@@ -272,7 +293,7 @@ export function HeaderBar({
   };
 
   const titleStyle: React.CSSProperties = {
-    fontSize: "var(--fontsize-medium)",
+    fontSize: "var(--brick-hb-title-size, var(--fontsize-medium))",
     fontWeight: 650,
     lineHeight: 1.2,
     whiteSpace: "nowrap",
@@ -284,8 +305,12 @@ export function HeaderBar({
     typeof logo === "string" ? (
       <img
         src={logo}
-        alt={title ?? "Logo"}
-        style={{ height: 28, width: "auto", display: "block" }}
+        alt={logoAlt ?? title ?? "Logo"}
+        style={{
+          height: "var(--brick-hb-logo-height, 28px)",
+          width: "auto",
+          display: "block"
+        }}
       />
     ) : (
       logo
@@ -499,7 +524,15 @@ export function HeaderBar({
                   <div style={{ display: "inline-flex", alignItems: "center", gap: 10, minWidth: 0 }}>
                     {logoNode ? <div style={{ flex: "0 0 auto" }}>{logoNode}</div> : null}
                     {title ? (
-                      <div style={{ ...titleStyle, fontSize: "var(--fontsize-sm)", maxWidth: 220 }}>{title}</div>
+                      <div
+                        style={{
+                          ...titleStyle,
+                          fontSize: "var(--brick-hb-title-size-mobile, var(--fontsize-sm))",
+                          maxWidth: 220
+                        }}
+                      >
+                        {title}
+                      </div>
                     ) : null}
                   </div>
                 ) : (

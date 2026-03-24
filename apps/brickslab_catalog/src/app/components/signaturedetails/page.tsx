@@ -37,7 +37,8 @@ const props: PropDef[] = [
     name: "columns",
     type: "1 | 2 | 3 | 4",
     default: "4",
-    description: "Nombre de colonnes de la grille CSS.",
+    description:
+      "Nombre de colonnes sur desktop. Sur tablette la grille passe automatiquement à min(columns, 2), et sur mobile à 1 colonne.",
   },
   {
     name: "cardRadius",

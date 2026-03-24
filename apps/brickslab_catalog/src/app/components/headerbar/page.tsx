@@ -18,9 +18,29 @@ const props: PropDef[] = [
     description: "Logo optionnel (URL d’image ou ReactNode).",
   },
   {
+    name: "logoHeight",
+    type: "number | string",
+    description: 'Hauteur du logo si `logo` est une URL (ex: `28`, `"40px"`, `"2rem"`).',
+  },
+  {
+    name: "logoAlt",
+    type: "string",
+    description: "Attribut alt de l’image si `logo` est une URL.",
+  },
+  {
     name: "title",
     type: "string",
     description: "Titre / brand optionnel.",
+  },
+  {
+    name: "titleSize",
+    type: "number | string",
+    description: 'Taille du titre sur desktop/tablette (ex: `16`, `"18px"`, `"1.1rem"`).',
+  },
+  {
+    name: "titleMobileSize",
+    type: "number | string",
+    description: "Taille du titre dans le panneau mobile (menu).",
   },
   {
     name: "navigation",
@@ -74,7 +94,11 @@ const usageCode = `import { HeaderBar } from "@brickslab./ui-web";
 
 <HeaderBar
   logo="/logo.svg"
+  logoHeight={32}
+  logoAlt="BricksLab"
   title="BricksLab"
+  titleSize="18px"
+  titleMobileSize="14px"
   navPosition="center"
   blur
   withBorder

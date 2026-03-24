@@ -16,7 +16,11 @@ const styles = `
   }
   .bl-sig-header h2 { font-size: clamp(40px, 6vw, 90px); margin-bottom: 20px; }
   .bl-sig-header p  { font-size: 18px; opacity: 0.7; }
-  .bl-sig-grid { display: grid; gap: 40px; }
+  .bl-sig-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(var(--bl-sig-columns, 4), minmax(0, 1fr));
+  }
   .bl-sig-card { position: relative; overflow: hidden; cursor: pointer; }
   .bl-sig-img-wrap { overflow: hidden; background: #000; }
   .bl-sig-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
@@ -28,6 +32,7 @@ const styles = `
     justify-content: flex-end;
     padding: 30px;
     color: white;
+    text-align: center;
   }
   .bl-sig-overlay h3 { font-size: 24px; margin-bottom: 8px; }
   .bl-sig-overlay p  { font-size: 14px; opacity: 0.85; }
@@ -39,6 +44,28 @@ const styles = `
     padding: 20px;
     background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
     color: white;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .bl-sig-container { padding: 0 24px; }
+    .bl-sig-header { margin: 0 auto 72px; }
+    .bl-sig-grid {
+      gap: 24px;
+      grid-template-columns: repeat(var(--bl-sig-columns-tablet, 2), minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bl-sig-container { padding: 0 16px; }
+    .bl-sig-header { margin: 0 auto 48px; }
+    .bl-sig-header p { font-size: 16px; }
+    .bl-sig-overlay { padding: 20px; }
+    .bl-sig-overlay h3 { font-size: 20px; }
+    .bl-sig-grid {
+      gap: 16px;
+      grid-template-columns: repeat(var(--bl-sig-columns-mobile, 1), minmax(0, 1fr));
+    }
   }
 `;
 
@@ -76,6 +103,9 @@ export function SignatureDetails({
   imageAspectRatio = "3/4",
   className = "",
 }: SignatureDetailsProps) {
+  const tabletColumns = Math.min(columns, 2);
+  const mobileColumns = 1;
+
   return (
     <>
       <style>{styles}</style>
@@ -100,7 +130,13 @@ export function SignatureDetails({
           {/* Grid */}
           <div
             className="bl-sig-grid"
-            style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+            style={
+              {
+                "--bl-sig-columns": columns,
+                "--bl-sig-columns-tablet": tabletColumns,
+                "--bl-sig-columns-mobile": mobileColumns,
+              } as React.CSSProperties & Record<string, number>
+            }
           >
             {details.map((detail, index) => (
               <motion.div
